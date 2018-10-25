@@ -8,6 +8,17 @@
   </head>
   <body>
 
+    <form ng-submit="ctrl.createPlace()">
+      <input type="text" ng-model="ctrl.name" placeholder="name"/>
+      <input type="text" ng-model="ctrl.location" placeholder="location"/>
+      <input type="text" ng-model="ctrl.image" placeholder="img"/>
+      <input type="text" ng-model="ctrl.description" placeholder="description"/>
+      <input type = "submit" value = "Create New Haunted Place"/>
+    </form>
+
+
+
+
 
   </body>
 </html>

@@ -14,6 +14,22 @@ app.controller('MainController', ['$http', function($http){
     function(error)
   )
   }
+  this.createPlace = function() {
+    $http({
+      method: 'POST',
+      url: '/places',
+      data: {
+        name: this.name,
+        location: this.location,
+        image: this.image,
+        description: this.description
+      }
+    }).then(function(response){
+      controller.getPlaces()
+    })
+  }
+
+
 
 
 
