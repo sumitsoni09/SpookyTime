@@ -1,27 +1,32 @@
 const express = require('express');
 const router = express.Router();
-const Sessions = require('../models/sessions.js')
-
-router.post('/', (req, res)=>{
-  Sesssions.create(req.body, (err, createdSession)=>{
-    res.json(createdSession);
-  })
-})
-
-router.get('/', (req, res)=>{
-  Sessions.find({}, (err, foundSessions)=>{
-    res.json(foundSessions);
-  })
-})
+const User = require('../models/users.js');
+const bcrypt = require('bcrypt');
 
 router.delete('/', (req, res)=>{
-  Session.findByIdAndRemove(req.params.id, (err, deletedSession)=>{
-    res.json(deletedSession);
+  req.session.destroy(()=>{
+    res.status(200).json({
+      status:200,
+      message: 'logout complete'
+      }),
+    })
+  });
+
+router.post('/', (req,res)=>{
+  User.findOne({username: req.body.username}, (err, foundUser)=>{
+    if(bycrypt.compareSync(req.body.password, foundUser.password)){
+      req.session.currentUser = foundUser;
+      res.status(201).json({
+        status: 201,
+        message: 'session created'
+      })
+    }else{
+      res.status(401).json({
+        status:401,
+        message: 'login failed'
+      })
+    }
   })
 })
 
-router.put('/:id', (req,res)=>{
-  Sessions.findByIdAndUpdate(req.params.id, {new:true}, (err, updatedSession)=>{
-    res.json(updatedSession);
-  })
-})
+module.exports = router;
