@@ -6,27 +6,24 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <title>Haunted Places</title>
   </head>
-<body ng-controller="MainController as ctrl">
-    
-   <div class="container">
+  <body ng-controller="MainController as ctrl">
+
+    <div class="container">
       <table>
         <tr ng-repeat="place in ctrl.places">
           <td>{{place.name}}</td>
           <td>{{place.location}}</td>
           <td>{{place.image}}</td>
+          <button ng-click ="ctrl.deletePlace(place)">Delete</button>
         </tr>
       </table>
+      <a href="#" ng-click="ctrl.indexOfEditFormToShow = $index">Edit Place</a>
+      <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editPlace(place)">
+        Name: <input ng-model=" ctrl.updatedName" type="text" placeholder="Name"/>
+        Location: <input ng-model="ctrl.updatedLocation" type="text" placeholder="Location"/>
+        Image: <input ng-model="ctrl.updatedImage" type="text" placeholder="Image URL"/>
+        <input type="submit" value="Update Place"/>
+      </form>
     </div>
-  
-    
-    <form ng-submit="ctrl.createPlace()">
-      <input type="text" ng-model="place.name" placeholder="name"/>
-      <input type="text" ng-model="place.location" placeholder="location"/>
-      <input type="text" ng-model="place.image" placeholder="img"/>
-      <input type="text" ng-model="place.description" placeholder="description"/>
-      <input type = "submit" value = "Create New Haunted Place"/>
-    </form>
-
-
   </body>
 </html>
