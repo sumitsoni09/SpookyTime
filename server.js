@@ -10,10 +10,10 @@ const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
 
 const usersController = require('./controllers/users.js')
-app.use('/users', sessionsController)
+app.use('/users', usersController)
 
 const placesController = require('./controllers/places.js')
-app.use('/places', sessionsController)
+app.use('/places', placesController)
 
 
 mongoose.connect('mongodb://localhost:27017/haunted', {useNewUrlParser: true })
