@@ -10,12 +10,23 @@ places.get('/', (req, res) => {
   })
 })
 
-
+places.delete('/:id', (req, res) => {
+  Places.findByIdAndRemove(req.params.id, (err, deletedPlace) => {
+    res.json(deletedPlace)
+  })
+})
 
 // create new place post route
 places.post('/', (req, res) => {
   Places.create(req.body, (err, createdPlace) => {
     res.json(createdPlace)
+  })
+})
+
+// update place put route
+places.put('/:id', (req, res) => {
+  Places.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPlace) => {
+    res.json(updatedPlace)
   })
 })
 
