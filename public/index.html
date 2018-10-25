@@ -6,9 +6,9 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <title>Haunted Places</title>
   </head>
-  <body ng-controller="MainController as ctrl">
+<body ng-controller="MainController as ctrl">
     
-    <div class="container">
+   <div class="container">
       <table>
         <tr ng-repeat="place in ctrl.places">
           <td>{{place.name}}</td>
@@ -17,5 +17,16 @@
         </tr>
       </table>
     </div>
+  
+    
+    <form ng-submit="ctrl.createPlace()">
+      <input type="text" ng-model="place.name" placeholder="name"/>
+      <input type="text" ng-model="place.location" placeholder="location"/>
+      <input type="text" ng-model="place.image" placeholder="img"/>
+      <input type="text" ng-model="place.description" placeholder="description"/>
+      <input type = "submit" value = "Create New Haunted Place"/>
+    </form>
+
+
   </body>
 </html>
