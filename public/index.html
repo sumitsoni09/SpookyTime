@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app"HauntedApp">
+<html lang="en" dir="ltr" ng-app="HauntedApp">
   <head>
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
-    <script src="app.js" charset="utf-8"></script>
-    <title></title>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <title>Haunted Places</title>
   </head>
-  <body>
-
+<body ng-controller="MainController as ctrl">
+    
+   <div class="container">
+      <table>
+        <tr ng-repeat="place in ctrl.places">
+          <td>{{place.name}}</td>
+          <td>{{place.location}}</td>
+          <td>{{place.image}}</td>
+        </tr>
+      </table>
+    </div>
+  
+    
     <form ng-submit="ctrl.createPlace()">
-      <input type="text" ng-model="ctrl.name" placeholder="name"/>
-      <input type="text" ng-model="ctrl.location" placeholder="location"/>
-      <input type="text" ng-model="ctrl.image" placeholder="img"/>
-      <input type="text" ng-model="ctrl.description" placeholder="description"/>
+      <input type="text" ng-model="place.name" placeholder="name"/>
+      <input type="text" ng-model="place.location" placeholder="location"/>
+      <input type="text" ng-model="place.image" placeholder="img"/>
+      <input type="text" ng-model="place.description" placeholder="description"/>
       <input type = "submit" value = "Create New Haunted Place"/>
     </form>
-
-
-
 
 
   </body>

@@ -10,9 +10,9 @@ app.controller('MainController', ['$http', function($http){
       url: '/places/' + place._id
     }).then(function(response){
       controller.getPlaces();
-    },
-    function(error)
-  )
+    }, function(error){
+      console.log(error);
+    })
   }
   this.createPlace = function() {
     $http({
@@ -31,7 +31,20 @@ app.controller('MainController', ['$http', function($http){
 
 
 
+  // show all haunted places
+  this.getPlaces = function(){
+    $http({
+      method: 'GET',
+      url: '/places'
+    }).then(function(response){
+      controller.places = response.data
+      // this.places = response.data
+    }, error => {
+      console.log(error);
+    })
+  }
 
+  this.getPlaces();
 
 
 
