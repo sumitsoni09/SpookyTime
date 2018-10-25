@@ -28,6 +28,22 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
+  //update haunted place
+  this.editPlace = function(place){
+    $http({
+      method: 'PUT',
+      url: '/places/' + place._id,
+      data: {
+        name: this.updatedName,
+        location: this.updatedLocation,
+        image: this.updatedImage,
+      }
+    }).then(function(response){
+      controller.getPlaces();
+    })
+
+  }
+  this.indexOfEditFormToShow = 1;
   this.getPlaces();
 
 
