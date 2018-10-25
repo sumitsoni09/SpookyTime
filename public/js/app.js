@@ -1,8 +1,8 @@
 const app = angular.module('HauntedApp',[])
 
 app.controller('MainController', ['$http', function($http){
-
   const controller = this;
+  this.indexOfEditFormToShow = 1;
 
 
   this.createPlace = function() {
@@ -43,15 +43,13 @@ app.controller('MainController', ['$http', function($http){
         name: this.updatedName,
         location: this.updatedLocation,
         image: this.updatedImage,
+        description: this.updatedDescription
       }
     }).then(function(response){
       controller.getPlaces();
     })
 
   }
-  this.indexOfEditFormToShow = 1;
-  this.getPlaces();
-
 
 
   this.deletePlace = function(place){
@@ -64,7 +62,6 @@ app.controller('MainController', ['$http', function($http){
       console.log(error);
     })
   }
-
 
 
   this.getPlaces();
