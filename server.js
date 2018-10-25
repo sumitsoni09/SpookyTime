@@ -6,11 +6,11 @@ const mongoose = require('mongoose');
 app.use(express.json())
 app.use(express.static('public'))
 
-const sessionsController = require('./controllers/sessions.js')
-app.use('/sessions', sessionsController)
-
-const usersController = require('./controllers/users.js')
-app.use('/users', usersController)
+// const sessionsController = require('./controllers/sessions.js')
+// app.use('/sessions', sessionsController)
+//
+// const usersController = require('./controllers/users.js')
+// app.use('/users', usersController)
 
 const placesController = require('./controllers/places.js')
 app.use('/places', placesController)
