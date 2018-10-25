@@ -33,7 +33,7 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
-<<<<<<< HEAD
+
   //update haunted place
   this.editPlace = function(place){
     $http({
@@ -52,8 +52,6 @@ app.controller('MainController', ['$http', function($http){
   this.indexOfEditFormToShow = 1;
   this.getPlaces();
 
-=======
->>>>>>> 5f232dfb0ad1797bcb46356bcaf76119e3cf229c
 
 
   this.deletePlace = function(place){
