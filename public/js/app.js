@@ -4,14 +4,19 @@ app.controller('MainController', ['$http', function($http){
 
   const controller = this;
 
-  this.deletePlace = function(place){
+
+  this.createPlace = function() {
     $http({
-      method: 'DELETE',
-      url: '/places/' + place._id
+      method: 'POST',
+      url: '/places',
+      data: {
+        name: this.name,
+        location: this.location,
+        image: this.image,
+        description: this.description
+      }
     }).then(function(response){
-      controller.getPlaces();
-    }, function(error){
-      console.log(error);
+      controller.getPlaces()
     })
   }
 
@@ -28,13 +33,22 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
+
+
+  this.deletePlace = function(place){
+    $http({
+      method: 'DELETE',
+      url: '/places/' + place._id
+    }).then(function(response){
+      controller.getPlaces();
+    }, function(error){
+      console.log(error);
+    })
+  }
+
+
+
   this.getPlaces();
-
-
-
-
-
-
 
 
 
