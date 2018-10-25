@@ -4,16 +4,7 @@ app.controller('MainController', ['$http', function($http){
 
   const controller = this;
 
-  this.deletePlace = function(place){
-    $http({
-      method: 'DELETE',
-      url: '/places/' + place._id
-    }).then(function(response){
-      controller.getPlaces();
-    }, function(error){
-      console.log(error);
-    })
-  }
+
   this.createPlace = function() {
     $http({
       method: 'POST',
@@ -29,8 +20,6 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
-
-
   // show all haunted places
   this.getPlaces = function(){
     $http({
@@ -44,13 +33,22 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
+
+
+  this.deletePlace = function(place){
+    $http({
+      method: 'DELETE',
+      url: '/places/' + place._id
+    }).then(function(response){
+      controller.getPlaces();
+    }, function(error){
+      console.log(error);
+    })
+  }
+
+
+
   this.getPlaces();
-
-
-
-
-
-
 
 
 
