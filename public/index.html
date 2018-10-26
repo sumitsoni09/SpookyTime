@@ -6,6 +6,31 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <title>Haunted Places</title>
   </head>
+  <header ng-controller="AuthController as auth">
+    <h2>Create User</h2>
+    <form ng-submit="auth.createUser()">
+      <input type ="text" ng-model="auth.username"/>
+      <input type="password" ng-model="auth.password"/>
+      <input type="submit" value="Become a Ghostly Ghoul"/>
+    </form>
+    <h2>Log In </h2>
+    <form ng-submit="auth.logIn()">
+      <input type = "text" ng-model="auth.username"/>
+      <input type="password" ng-model="auth.password"/>
+
+      <input ng-click="auth.goApp()" type ="submit" value ="Log in (if you dare)"/>
+    </form>
+    <div ng-if="auth.loggedInUsername">
+    <!-- <a href ="#" ng-click=>Click</a> -->
+      Welcome, {{auth.loggedInUsername}}
+    </div>
+
+  </header>
+
+
+
+
+
   <body ng-controller="MainController as ctrl">
 
     <div class="container">
@@ -15,19 +40,24 @@
           <td>{{place.location}}</td>
           <td><img src="{{place.image}}"></td>
           <td>{{place.description}}</td>
-          <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
-          <td><button ng-click="ctrl.indexOfEditFormToShow = $index">Edit</button></td>
+          <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td>
 
-  <td><form
-            ng-if="$index === ctrl.indexOfEditFormToShow"
-            ng-submit="ctrl.editPlace(place);">
-        Name: <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-        Location: <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-        Image: <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-        Description: <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
+    <td>
+      <button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+
+      <form ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
+      ng-submit="ctrl.editPlace(place)">
+
+        <form class="update-form" ng-if="ctrl.showEditForm" ng-submit="ctrl.editPlace(place)">
+
+        <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
+        <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+        <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+        <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
         <input type="submit" value="Update Place"/>
 
-      </form></td>
+        </form>
+      </td>
     </tr>
   </table>
 
