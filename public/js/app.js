@@ -2,6 +2,7 @@ const app = angular.module('HauntedApp',[])
 
 app.controller('MainController', ['$http', function($http){
   const controller = this;
+  this.showEditForm = false;
 
 
 
@@ -45,8 +46,11 @@ app.controller('MainController', ['$http', function($http){
         image: this.updatedImage,
         description: this.updatedDescription
       }
-    }).then(function(response){
-      controller.getPlaces();
+    }).then((response)=> {
+      this.getPlaces();
+      this.showEditForm = null;
+    }, (err)=> {
+      console.log(err)
     })
 
   }
@@ -66,7 +70,9 @@ app.controller('MainController', ['$http', function($http){
 
   this.$indexOfEditFormToShow = 1;
 
-
+  this.toggleShowEditForm = (place) => {
+    this.showEditForm = !this.showEditForm
+  }
 
   this.getPlaces();
 
