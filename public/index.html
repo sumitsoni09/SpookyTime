@@ -19,18 +19,16 @@
 
       <td><a href='#' ng-click="ctrl.indexOfEditFormToShow = $index">Edit</a></td>
 
-    <form ng-if="$index === ctrl.indexOfEditFormToShow"
-          ng-submit="ctrl.editPlace(place);">
-
-        Name: <input ng-model=" ctrl.updatedName" type="text" placeholder="Name"/>
-        Location: <input ng-model="ctrl.updatedLocation" type="text" placeholder="Location"/>
-        Image: <input ng-model="ctrl.updatedImage" type="text" placeholder="Image URL"/>
-        Description: <input ng-model="ctrl.updatedDescription" type="text" placeholder="Description"/>
+    <form ng-submit="ctrl.editPlace(place);"
+      ng-click="ctrl.indexOfEditFormToShow = $index">
+<td>
+        Name: <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
+        Location: <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+        Image: <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+        Description: <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
         <input type="submit" value="Update Place"/>
 
-
-
-      </form>
+      </form></td>
     </tr>
   </table>
 
