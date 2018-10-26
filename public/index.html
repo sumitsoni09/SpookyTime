@@ -94,17 +94,16 @@
     <!-- SHOW PAGE MODAL -->
 
     <div
-      ng-repeat="place in ctrl.places"
       ng-if="ctrl.showModal === true"
        class="showModal">
       <a
         ng-click="ctrl.toggleModal(place)"
         href="#">x Close</a>
       <div class="showContents">
-        <img src="{{place.image}}" alt="An image of {{place.name}}" />
-        <h2>{{place.name}}</h2>
+        <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+        <h2>{{ctrl.place.name}}</h2>
         <label for="description">Description</label>
-        <p>{{place.description}}</p>
+        <p>{{ctrl.place.description}}</p>
       </div>
     </div>
 
