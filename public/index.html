@@ -6,6 +6,34 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <title>Haunted Places</title>
   </head>
+
+
+  <header ng-controller="AuthController as auth">
+    <h2>Create User</h2>
+    <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index">
+      <input type ="text" ng-model="auth.username"/>
+      <input type="password" ng-model="auth.password"/>
+      <input type="submit" value="Become a Ghostly Ghoul"/>
+    </form>
+    <h2>Log In </h2>
+    <form ng-submit="auth.logIn();"
+    ng-if="$index === $indexOfUserFormToShow">
+      <input type = "text" ng-model="auth.username"/>
+      <input type="password" ng-model="auth.password"/>
+
+      <input ng-click="auth.goApp()" type ="submit" value ="Log in (if you dare)"/>
+    </form>
+    <div ng-if="auth.loggedInUsername">
+    <!-- <a href ="#" ng-click=>Click</a> -->
+      Welcome, {{auth.loggedInUsername}}
+    </div>
+
+  </header>
+
+
+
+
+
   <body ng-controller="MainController as ctrl">
 
     <div class="container">
@@ -65,20 +93,20 @@
 
     <!-- SHOW PAGE MODAL -->
 
-      <div
-        ng-repeat="place in ctrl.places"
-        ng-if="ctrl.showModal === true"
-         class="showModal">
-        <a
-          ng-click="ctrl.toggleModal(place)"
-          href="#">x Close</a>
-        <div class="showContents">
-          <img src="{{place.image}}" alt="An image of {{place.name}}" />
-          <h2>{{place.name}}</h2>
-          <label for="description">Description</label>
-          <p>{{place.description}}</p>
-        </div>
+    <div
+      ng-repeat="place in ctrl.places"
+      ng-if="ctrl.showModal === true"
+       class="showModal">
+      <a
+        ng-click="ctrl.toggleModal(place)"
+        href="#">x Close</a>
+      <div class="showContents">
+        <img src="{{place.image}}" alt="An image of {{place.name}}" />
+        <h2>{{place.name}}</h2>
+        <label for="description">Description</label>
+        <p>{{place.description}}</p>
       </div>
+    </div>
 
 
 

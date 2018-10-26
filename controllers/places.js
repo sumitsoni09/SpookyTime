@@ -2,7 +2,8 @@ const express = require('express')
 const places = express.Router()
 // require the Haunted Places model
 const Places = require('../models/places.js')
-const User = require('../models/users.js')
+const placesSeed = require('../models/seed.js')
+
 
 // index page get route
 places.get('/', (req, res) => {
@@ -38,5 +39,20 @@ places.put('/:id', (req, res) => {
     res.json(updatedPlace)
   })
 })
+
+places.get('/seed', (req, res)=> {
+  Places.create(placesSeed, (err, pets)=> {
+    console.log(places)
+    res.redirect('/')
+  })
+})
+
+
+places.get('/dropdatabase/areyousure', (req, res)=> {
+  Places.collection.drop();
+  res.send('You dropped the seed, congrats! Visit <a href ="/seed">HERE</a> to reseed.')
+})
+
+
 
 module.exports = places;

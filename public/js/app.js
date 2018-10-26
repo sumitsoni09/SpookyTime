@@ -8,7 +8,6 @@ app.controller('MainController', ['$http', function($http){
   this.places = '';
   this.place = '';
 
-
   this.createPlace = function() {
     $http({
       method: 'POST',
@@ -132,8 +131,58 @@ app.controller('MainController', ['$http', function($http){
     this.showEditForm = !this.showEditForm
   }
 
+
+
   this.getPlaces();
 
+
+
+}])
+
+
+
+app.controller('AuthController', ['$http', function($http){
+  this.$indexOfUserFormToShow = 1;
+
+  this.createUser = function(){
+    $http({
+      method: 'POST',
+      url:'/users',
+      data: {
+        username: this.username,
+        password: this.password
+      }
+    }).then(function(response){
+      this.toggleShowCreateUser = null
+      console.log(response)
+    })
+  }
+
+  this.logIn = function(){
+    $http({
+      method: 'POST',
+      url: '/sessions',
+      data: {
+        username: this.username,
+        password: this.password
+      }
+    }).then(function(response){
+      console.log(response)
+    })
+  }
+const controller = this
+  this.goApp = function(){
+    $http({
+      method: 'GET',
+      url: '/app'
+    }).then(function(response){
+      controller.loggedInUsername = response.data.username
+    })
+  }
+
+  toggleShowCreateUser = () => {
+    this.showCreateUser = !this.showCreateUser
+  }
 
 
 }])

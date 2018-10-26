@@ -8,13 +8,13 @@ router.delete('/', (req, res)=>{
     res.status(200).json({
       status:200,
       message: 'logout complete'
-      }),
+      })
     })
   });
 
 router.post('/', (req,res)=>{
   User.findOne({username: req.body.username}, (err, foundUser)=>{
-    if(bycrypt.compareSync(req.body.password, foundUser.password)){
+    if(bcrypt.compareSync(req.body.password, foundUser.password)){
       req.session.currentUser = foundUser;
       res.status(201).json({
         status: 201,
