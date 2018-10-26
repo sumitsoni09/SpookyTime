@@ -49,7 +49,7 @@ app.controller('MainController', ['$http', function($http){
   // }
 
 
-
+  // toggle show page modal
   this.toggleModal = (place) => {
     this.showModal = !this.showModal;
 
@@ -71,10 +71,10 @@ app.controller('MainController', ['$http', function($http){
       // this.place = this.places
       // this.place = response.data
       // this.showPlace(place);
-      this.name = response.data.name;
-      this.image = response.data.image;
-      this.description = response.data.description;
-      this.id = response.data._id
+      place.name = response.data.name;
+      place.image = response.data.image;
+      place.description = response.data.description;
+      place.id = response.data._id;
       console.log(response.data);
     })
   }
