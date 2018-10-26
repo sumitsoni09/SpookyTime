@@ -47,7 +47,7 @@
 
           <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
           <td><button ng-click="ctrl.indexOfEditFormToShow = $index">Edit</button></td>
-          <td> <button ng-click="ctrl.toggleModal(place)">See Details</button> </td>
+          <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
           <!-- EDIT FORM -->
           <td><form
             ng-if="$index === ctrl.indexOfEditFormToShow"

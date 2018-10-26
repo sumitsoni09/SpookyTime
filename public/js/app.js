@@ -25,57 +25,9 @@ app.controller('MainController', ['$http', function($http){
     })
   }
 
-  // this.showPlace = function(place){
-  //
-  //   $http({
-  //     method: 'GET',
-  //     url: '/places' + place._id,
-  //     data: {
-  //       name: this.name,
-  //       image: this.image,
-  //       description: this.description,
-  //       id: this.id
-  //     }
-  //   }).then( response => {
-  //     // place.name = response.data.name;
-  //     // place.image = response.data.image;
-  //     // place.description = response.data.description;
-  //
-  //     console.log('i am data from showPlace' + response.data);
-  //   }, error => {
-  //     console.log(error);
-  //   })
-  // }
-
-
-  // toggle show page modal
-  this.toggleModal = (place) => {
+  this.showOnePlace = place => {
+    this.place = place;
     this.showModal = !this.showModal;
-
-    // this.place = place
-    // console.log(place);
-    // this.showPlace();
-
-    $http({
-      method: 'GET',
-      url: '/places/' + place._id,
-      data: {
-        name: place.name,
-        image: place.image,
-        description: place.description,
-        id: place._id
-      }
-    }).then(function(response){
-      // this.places = response.data
-      // this.place = this.places
-      // this.place = response.data
-      // this.showPlace(place);
-      place.name = response.data.name;
-      place.image = response.data.image;
-      place.description = response.data.description;
-      place.id = response.data._id;
-      console.log(response.data);
-    })
   }
 
   // show all haunted places
