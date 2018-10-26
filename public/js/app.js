@@ -2,8 +2,12 @@ const app = angular.module('HauntedApp',[])
 
 app.controller('MainController', ['$http', function($http){
   const controller = this;
+<<<<<<< HEAD
   this.indexOfEditFormToShow = 1;
   this.showModal = false;
+=======
+
+>>>>>>> 87a995eb898418ea758cf3f4f92015a0e50a0471
 
 
   this.createPlace = function() {
@@ -89,6 +93,10 @@ app.controller('MainController', ['$http', function($http){
       console.log(error);
     })
   }
+
+
+  this.$indexOfEditFormToShow = 1;
+
 
 
   this.getPlaces();
