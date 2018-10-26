@@ -4,7 +4,6 @@ app.controller('MainController', ['$http', function($http){
   const controller = this;
   this.showEditForm = false;
   this.showModal = false;
-  this.indexOfModalToShow = 1;
   this.places = '';
   this.place = '';
 

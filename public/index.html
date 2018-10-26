@@ -54,11 +54,11 @@
           <td>{{place.description}}</td>
 
           <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
-          <td><button ng-click="ctrl.indexOfEditFormToShow = $index">Edit</button></td>
+          <td><button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button></td>
           <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
           <!-- EDIT FORM -->
           <td><form
-            ng-if="$index === ctrl.indexOfEditFormToShow"
+            ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
             ng-submit="ctrl.editPlace(place);">
             Name: <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
             Location: <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
@@ -67,24 +67,6 @@
             <input type="submit" value="Update Place"/>
 
           <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td>
-
-    <td>
-      <button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
-
-      <form ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
-      ng-submit="ctrl.editPlace(place)">
-
-        <form class="update-form" ng-if="ctrl.showEditForm" ng-submit="ctrl.editPlace(place)">
-
-        <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-        <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-        <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-        <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
-        <input type="submit" value="Update Place"/>
-
-
-        </form>
-      </td>
     </tr>
   </table>
 
