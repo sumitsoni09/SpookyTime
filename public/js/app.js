@@ -64,7 +64,7 @@ app.controller('MainController', ['$http', function($http){
   }
 
 
-  this.$indexOfEditFormToShow = 1
+  this.$indexOfEditFormToShow = 1;
 
 
 

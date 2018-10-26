@@ -16,12 +16,11 @@
           <td><img src="{{place.image}}"></td>
           <td>{{place.description}}</td>
           <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
+          <td><button ng-click="ctrl.indexOfEditFormToShow = $index">Edit</button></td>
 
-      <td><a href='#' ng-click="ctrl.indexOfEditFormToShow = $index">Edit</a></td>
-
-    <form ng-submit="ctrl.editPlace(place);"
-      ng-click="ctrl.indexOfEditFormToShow = $index">
-<td>
+  <td><form
+            ng-if="$index === ctrl.indexOfEditFormToShow"
+            ng-submit="ctrl.editPlace(place);">
         Name: <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
         Location: <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
         Image: <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
