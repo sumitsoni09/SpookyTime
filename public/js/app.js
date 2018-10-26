@@ -87,6 +87,7 @@ app.controller('AuthController', ['$http', function($http){
 
   this.toggleShowCreateUser = false;
   this.toggleShowLogIn = false;
+  const controller = this
 
   this.createUser = function(){
     $http({
@@ -115,13 +116,14 @@ app.controller('AuthController', ['$http', function($http){
       console.log(response)
     })
   }
-const controller = this
+
   this.goApp = function(){
     $http({
       method: 'GET',
       url: '/app'
     }).then(function(response){
-      controller.loggedInUsername = response.data.username
+    console.log("hello")
+    controller.loggedInUsername = response.data.username
     })
   }
   this.$indexOfUserFormToShow = 1;
