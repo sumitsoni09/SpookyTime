@@ -12,12 +12,14 @@
       <table>
         <tr ng-repeat="place in ctrl.places">
           <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
-          <td> <a href="/" ng-click="ctrl.indexofModalToShow = $index" >{{place.name}}</a> </td>
+          <td>{{place.name}}</td>
           <td>{{place.location}}</td>
           <td><img src="{{place.image}}"></td>
           <td>{{place.description}}</td>
+
           <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
           <td><button ng-click="ctrl.indexOfEditFormToShow = $index">Edit</button></td>
+          <td> <button ng-click="ctrl.toggleModal(place)">See Details</button> </td>
           <!-- EDIT FORM -->
           <td><form
             ng-if="$index === ctrl.indexOfEditFormToShow"
@@ -28,7 +30,25 @@
             Description: <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
             <input type="submit" value="Update Place"/>
 
-      </form></td>
+          <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td>
+
+    <td>
+      <button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+
+      <form ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
+      ng-submit="ctrl.editPlace(place)">
+
+        <form class="update-form" ng-if="ctrl.showEditForm" ng-submit="ctrl.editPlace(place)">
+
+        <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
+        <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+        <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+        <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
+        <input type="submit" value="Update Place"/>
+
+
+        </form>
+      </td>
     </tr>
   </table>
 
@@ -44,17 +64,23 @@
     </form>
 
     <!-- SHOW PAGE MODAL -->
-    <div
-      ng-if="$index === ctrl.indexOfModalToShow"
-      ng-show="ctrl.showPlace()" class="showModal">
-      <a href="/">x Close</a>
-      <div class="showContents">
-        <img src="{{place.image}}" alt="An image of {{place.name}}" />
-        <h2>{{place.name}}</h2>
-        <label for="description">Description</label>
-        <p>{{place.description}}</p>
+
+      <div
+        ng-repeat="place in ctrl.places"
+        ng-if="ctrl.showModal === true"
+         class="showModal">
+        <a
+          ng-click="ctrl.toggleModal(place)"
+          href="#">x Close</a>
+        <div class="showContents">
+          <img src="{{place.image}}" alt="An image of {{place.name}}" />
+          <h2>{{place.name}}</h2>
+          <label for="description">Description</label>
+          <p>{{place.description}}</p>
+        </div>
       </div>
-    </div>
+
+
 
 
     </div>
