@@ -18,7 +18,7 @@
           <button ng-click ="ctrl.deletePlace(place)">Delete</button>
         </tr>
       </table>
-      
+
       <a href="#" ng-click="ctrl.indexOfEditFormToShow = $index">Edit Place</a>
       <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editPlace(place)">
         Name: <input ng-model=" ctrl.updatedName" type="text" placeholder="Name"/>
@@ -26,10 +26,10 @@
         Image: <input ng-model="ctrl.updatedImage" type="text" placeholder="Image URL"/>
         <input type="submit" value="Update Place"/>
       </form>
-      
-      
-      
-      
+
+
+
+
    <form ng-submit="ctrl.createPlace()">
       <input type="text" ng-model="ctrl.name" placeholder="name"/>
       <input type="text" ng-model="ctrl.location" placeholder="location"/>
@@ -37,9 +37,9 @@
       <input type="text" ng-model="ctrl.description" placeholder="description"/>
       <input type = "submit" value = "Create New Haunted Place"/>
     </form>
-      
-      
-      
+
+
+
     </div>
   </body>
 </html>
