@@ -11,7 +11,8 @@
     <div class="container">
       <table>
         <tr ng-repeat="place in ctrl.places">
-          <td>{{place.name}}</td>
+          <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
+          <td> <a href="#" ng-click="toggleModal()" >{{place.name}}</a> </td>
           <td>{{place.location}}</td>
           <td><img src="{{place.image}}"></td>
           <td>{{place.description}}</td>
@@ -32,7 +33,7 @@
 
 
 
-   <form ng-submit="ctrl.createPlace()">
+    <form ng-submit="ctrl.createPlace()">
       <input type="text" ng-model="ctrl.name" placeholder="name"/>
       <input type="text" ng-model="ctrl.location" placeholder="location"/>
       <input type="text" ng-model="ctrl.image" placeholder="img"/>
@@ -40,6 +41,16 @@
       <input type = "submit" value = "Create New Haunted Place"/>
     </form>
 
+    <!-- SHOW PAGE MODAL -->
+    <div ng-show="ctrl.showPlace()" class="showModal">
+      <a href="#">x Close</a>
+      <div class="showContents">
+        <img src="{{place.image}}" alt="An image of {{place.name}}" />
+        <h2>{{place.name}}</h2>
+        <label for="description">Description</label>
+        <p>{{place.description}}</p>
+      </div>
+    </div>
 
 
     </div>

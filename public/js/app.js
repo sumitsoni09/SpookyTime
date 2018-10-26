@@ -3,6 +3,7 @@ const app = angular.module('HauntedApp',[])
 app.controller('MainController', ['$http', function($http){
   const controller = this;
   this.indexOfEditFormToShow = 1;
+  this.showModal = false;
 
 
   this.createPlace = function() {
@@ -17,6 +18,32 @@ app.controller('MainController', ['$http', function($http){
       }
     }).then(function(response){
       controller.getPlaces()
+    }, error => {
+      console.log(error);
+    })
+  }
+
+  this.showPlace = function(place){
+    $http({
+      method: 'GET',
+      url: '/places/' + id,
+    }).then(function(){
+      const findById = this.places.findById( place => {
+        return place._id === id
+      })
+
+    }, error => {
+      console.log(error);
+    })
+  }
+
+  this.toggleModal = () => {
+    this.showModal = true;
+    $http({
+      method: 'GET',
+      url: '/places'
+    }).then(function(){
+      this.showPlace();
     })
   }
 

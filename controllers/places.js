@@ -2,11 +2,18 @@ const express = require('express')
 const places = express.Router()
 // require the Haunted Places model
 const Places = require('../models/places.js')
+const User = require('../models/users.js')
 
 // index page get route
 places.get('/', (req, res) => {
   Places.find({}, (err, foundPlaces) => {
     res.json(foundPlaces)
+  })
+})
+
+places.get('/:id', (req, res) => {
+  Places.findById(req.params.id, (err, foundPlace) => {
+    res.json(foundPlace)
   })
 })
 
