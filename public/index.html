@@ -6,15 +6,18 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <title>Haunted Places</title>
   </head>
+
+
   <header ng-controller="AuthController as auth">
     <h2>Create User</h2>
-    <form ng-submit="auth.createUser()">
+    <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index">
       <input type ="text" ng-model="auth.username"/>
       <input type="password" ng-model="auth.password"/>
       <input type="submit" value="Become a Ghostly Ghoul"/>
     </form>
     <h2>Log In </h2>
-    <form ng-submit="auth.logIn()">
+    <form ng-submit="auth.logIn();"
+    ng-if="$index === $indexOfUserFormToShow">
       <input type = "text" ng-model="auth.username"/>
       <input type="password" ng-model="auth.password"/>
 
