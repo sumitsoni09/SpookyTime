@@ -5,7 +5,6 @@ app.controller('MainController', ['$http', function($http){
   this.showEditForm = false;
 
 
-
   this.createPlace = function() {
     $http({
       method: 'POST',
@@ -75,6 +74,49 @@ app.controller('MainController', ['$http', function($http){
   }
 
   this.getPlaces();
+
+
+
+}])
+
+
+
+app.controller('AuthController', ['$http', function($http){
+
+  this.createUser = function(){
+    $http({
+      method: 'POST',
+      url:'/users',
+      data: {
+        username: this.username,
+        password: this.password
+      }
+    }).then(function(response){
+      console.log(response)
+    })
+  }
+
+  this.logIn = function(){
+    $http({
+      method: 'POST',
+      url: '/sessions',
+      data: {
+        username: this.username,
+        password: this.password
+      }
+    }).then(function(response){
+      console.log(response)
+    })
+  }
+const controller = this
+  this.goApp = function(){
+    $http({
+      method: 'GET',
+      url: '/app'
+    }).then(function(response){
+      controller.loggedInUsername = response.data.username
+    })
+  }
 
 
 

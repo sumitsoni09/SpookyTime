@@ -6,6 +6,36 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <title>Haunted Places</title>
   </head>
+  <header ng-controller="AuthController as auth">
+    <h2>Create User</h2>
+    <form ng-submit="auth.createUser()">
+      <input type ="text" ng-model="auth.username"/>
+      <input type="password" ng-model="auth.password"/>
+      <input type="submit" value="Become a Ghostly Ghoul"/>
+    </form>
+    <h2>Log In </h2>
+    <form ng-submit="auth.logIn()">
+      <input type = "text" ng-model="auth.username"/>
+      <input type="password" ng-model="auth.password"/>
+
+      <input ng-click="auth.goApp()" type ="submit" value ="Log in (if you dare)"/>
+    </form>
+    <div ng-if="auth.loggedInUsername">
+    <!-- <a href ="#" ng-click=>Click</a> -->
+
+      Welcome, {{auth.loggedInUsername}}
+    </div>
+
+
+
+
+
+  </header>
+
+
+
+
+
   <body ng-controller="MainController as ctrl">
 
     <div class="container">
