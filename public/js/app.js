@@ -73,6 +73,8 @@ app.controller('MainController', ['$http', function($http){
     this.showEditForm = !this.showEditForm
   }
 
+
+
   this.getPlaces();
 
 
@@ -118,6 +120,7 @@ const controller = this
     })
   }
 
+  //toggleShowCreateUser = ()
 
 
 }])
