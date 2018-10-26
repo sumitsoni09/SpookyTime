@@ -3,7 +3,9 @@ const app = angular.module('HauntedApp',[])
 app.controller('MainController', ['$http', function($http){
   const controller = this;
   this.showEditForm = false;
-
+  this.showModal = false;
+  this.places = '';
+  this.place = '';
 
   this.createPlace = function() {
     $http({
@@ -17,7 +19,14 @@ app.controller('MainController', ['$http', function($http){
       }
     }).then(function(response){
       controller.getPlaces()
+    }, error => {
+      console.log(error);
     })
+  }
+
+  this.showOnePlace = place => {
+    this.place = place;
+    this.showModal = !this.showModal;
   }
 
   // show all haunted places

@@ -50,41 +50,56 @@
     <div class="container">
       <table>
         <tr ng-repeat="place in ctrl.places">
+          <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
           <td>{{place.name}}</td>
           <td>{{place.location}}</td>
           <td><img src="{{place.image}}"></td>
           <td>{{place.description}}</td>
+
+          <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
+          <td><button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button></td>
+          <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
+          <!-- EDIT FORM -->
+          <td><form
+            ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
+            ng-submit="ctrl.editPlace(place);">
+            Name: <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
+            Location: <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+            Image: <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+            Description: <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
+            <input type="submit" value="Update Place"/>
+
           <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td>
-
-    <td>
-      <button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
-
-      <form ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
-      ng-submit="ctrl.editPlace(place)">
-
-        <form class="update-form" ng-if="ctrl.showEditForm" ng-submit="ctrl.editPlace(place)">
-
-        <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-        <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-        <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-        <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
-        <input type="submit" value="Update Place"/>
-
-        </form>
-      </td>
     </tr>
   </table>
 
 
 
-
-   <form ng-submit="ctrl.createPlace()">
+  <!-- CREATE NEW HAUNTED PLACE FORM -->
+    <form ng-submit="ctrl.createPlace()">
       <input type="text" ng-model="ctrl.name" placeholder="name"/>
       <input type="text" ng-model="ctrl.location" placeholder="location"/>
       <input type="text" ng-model="ctrl.image" placeholder="img"/>
       <input type="text" ng-model="ctrl.description" placeholder="description"/>
       <input type = "submit" value = "Create New Haunted Place"/>
     </form>
+
+    <!-- SHOW PAGE MODAL -->
+
+    <div
+      ng-if="ctrl.showModal === true"
+       class="showModal">
+      <a
+        ng-click="ctrl.toggleModal(place)"
+        href="#">x Close</a>
+      <div class="showContents">
+        <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+        <h2>{{ctrl.place.name}}</h2>
+        <label for="description">Description</label>
+        <p>{{ctrl.place.description}}</p>
+      </div>
+    </div>
+
 
 
 
