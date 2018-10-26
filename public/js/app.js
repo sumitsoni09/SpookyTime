@@ -2,12 +2,9 @@ const app = angular.module('HauntedApp',[])
 
 app.controller('MainController', ['$http', function($http){
   const controller = this;
-<<<<<<< HEAD
-  this.indexOfEditFormToShow = 1;
   this.showModal = false;
-=======
 
->>>>>>> 87a995eb898418ea758cf3f4f92015a0e50a0471
+  this.indexOfModalToShow = 1;
 
 
   this.createPlace = function() {
@@ -35,21 +32,20 @@ app.controller('MainController', ['$http', function($http){
       const findById = this.places.findById( place => {
         return place._id === id
       })
-
     }, error => {
       console.log(error);
     })
   }
 
-  this.toggleModal = () => {
-    this.showModal = true;
-    $http({
-      method: 'GET',
-      url: '/places'
-    }).then(function(){
-      this.showPlace();
-    })
-  }
+  // this.toggleModal = () => {
+  //   this.showModal = true;
+  //   $http({
+  //     method: 'GET',
+  //     url: '/places'
+  //   }).then(function(){
+  //     this.showPlace();
+  //   })
+  // }
 
   // show all haunted places
   this.getPlaces = function(){

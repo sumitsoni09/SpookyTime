@@ -12,7 +12,7 @@
       <table>
         <tr ng-repeat="place in ctrl.places">
           <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
-          <td> <a href="#" ng-click="toggleModal()" >{{place.name}}</a> </td>
+          <td> <a href="/" ng-click="ctrl.indexofModalToShow = $index" >{{place.name}}</a> </td>
           <td>{{place.location}}</td>
           <td><img src="{{place.image}}"></td>
           <td>{{place.description}}</td>
@@ -44,8 +44,10 @@
     </form>
 
     <!-- SHOW PAGE MODAL -->
-    <div ng-show="ctrl.showPlace()" class="showModal">
-      <a href="#">x Close</a>
+    <div
+      ng-if="$index === ctrl.indexOfModalToShow"
+      ng-show="ctrl.showPlace()" class="showModal">
+      <a href="/">x Close</a>
       <div class="showContents">
         <img src="{{place.image}}" alt="An image of {{place.name}}" />
         <h2>{{place.name}}</h2>
