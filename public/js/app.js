@@ -84,7 +84,9 @@ app.controller('MainController', ['$http', function($http){
 
 
 app.controller('AuthController', ['$http', function($http){
-  this.$indexOfUserFormToShow = 1;
+
+  this.toggleShowCreateUser = false;
+  this.toggleShowLogIn = false;
 
   this.createUser = function(){
     $http({
@@ -95,7 +97,7 @@ app.controller('AuthController', ['$http', function($http){
         password: this.password
       }
     }).then(function(response){
-      this.toggleShowCreateUser = null
+      this.showCreateUser = null
       console.log(response)
     })
   }
@@ -109,6 +111,7 @@ app.controller('AuthController', ['$http', function($http){
         password: this.password
       }
     }).then(function(response){
+      this.showLogIn = null
       console.log(response)
     })
   }
@@ -121,10 +124,14 @@ const controller = this
       controller.loggedInUsername = response.data.username
     })
   }
-
-  toggleShowCreateUser = () => {
+  this.$indexOfUserFormToShow = 1;
+  this.toggleShowCreateUser = () => {
     this.showCreateUser = !this.showCreateUser
   }
 
+  this.$indexOfLogInFormToShow = 1;
+  this.toggleShowLogIn = () => {
+    this.showLogIn = !this.showLogIn
+  };
 
 }])
