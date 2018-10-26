@@ -5,11 +5,12 @@ const session = require('express-session')
 const db = mongoose.connection;
 
 
-app.use(session({
-  secret: 'spookytime',
-  resave: false,
-  saveUninitialized: false
-}))
+
+// app.use(session({
+//   secret: 'spookytime',
+//   resave: false,
+//   saveUninitialized: false
+// }))
 
 app.use(express.json())
 app.use(express.static('public'))

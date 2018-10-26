@@ -6,25 +6,36 @@
     <script src="/js/app.js" charset="utf-8"></script>
     <title>Haunted Places</title>
   </head>
+
+<!-- Second Controller for create user/session -->
   <header ng-controller="AuthController as auth">
-    <h2>Create User</h2>
-    <form ng-submit="auth.createUser()">
+
+    <!--Create User  -->
+    <button ng-click="auth.toggleShowCreateUser(); auth.indexOfUserFormToShow = $index">Create User</button>
+
+    <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
+    <form ng-if="$index === auth.indexOfUserFormToShow && auth.showCreateUser"
+    ng-submit="auth.createUser()">
       <input type ="text" ng-model="auth.username"/>
       <input type="password" ng-model="auth.password"/>
       <input type="submit" value="Become a Ghostly Ghoul"/>
     </form>
-    <h2>Log In </h2>
-    <form ng-submit="auth.logIn()">
+
+
+<!-- Log In -->
+    <button ng-click="auth.toggleShowLogIn(); auth.indexOfLogInFormToShow = $index">Log In</button>
+
+    <form ng-if="$index === auth.indexOfLogInFormToShow && auth.showLogIn"
+    ng-submit="auth.showLogIn()">
       <input type = "text" ng-model="auth.username"/>
       <input type="password" ng-model="auth.password"/>
-
       <input ng-click="auth.goApp()" type ="submit" value ="Log in (if you dare)"/>
-    </form>
+
     <div ng-if="auth.loggedInUsername">
     <!-- <a href ="#" ng-click=>Click</a> -->
       Welcome, {{auth.loggedInUsername}}
     </div>
-
+</form>
   </header>
 
 
