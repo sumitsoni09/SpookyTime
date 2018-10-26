@@ -63,11 +63,11 @@
           <td><form
             ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
             ng-submit="ctrl.editPlace(place);">
-            Name: <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-            Location: <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-            Image: <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-            Description: <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
-            <input type="submit" value="Update Place"/>
+            <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
+          <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+          <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+          <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
+          <input type="submit" value="Update Place"/>
 
           <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td>
     </tr>
@@ -90,7 +90,7 @@
       ng-if="ctrl.showModal === true"
        class="showModal">
       <a
-        ng-click="ctrl.toggleModal(place)"
+        ng-click="ctrl.showOnePlace()"
         href="#">x Close</a>
       <div class="showContents">
         <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
