@@ -14,7 +14,7 @@ app.use(session({
 app.use(express.json())
 app.use(express.static('public'))
 
-app.get('/app', (req, res)=> {
+app.get('/', (req, res)=> {
   if(req.session.currentUser) {
     res.json(req.session.currentUser)
   } else {
