@@ -1,5 +1,3 @@
-
-
 let seedPlaces = [
   {
     name: "The Largest Ghost Town in America",
