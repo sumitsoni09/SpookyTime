@@ -1,3 +1,43 @@
 body {
-  
+  background-color: black;
+  color: white;
+}
+
+input {
+  background-color: purple;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+input:hover{
+  border: 3px solid;
+  border-color:#56ff00;
+}
+
+::placeholder {
+  color: white;
+  opacity: .6;
+  text-align: center;
+}
+
+.sign-up {
+  margin: 8px;
+  border: 1px solid white;
+}
+
+.sign-up:hover {
+  border: 1px solid white;
+}
+
+.log-in {
+  border: 1px solid white;
+}
+
+.log-in:hover {
+  border: 1px solid white;
 }

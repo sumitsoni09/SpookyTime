@@ -1,5 +1,3 @@
-
-
 const app = angular.module('HauntedApp',[])
 
 app.controller('MainController', ['$http', function($http){
