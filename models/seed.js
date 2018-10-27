@@ -6,14 +6,5 @@ let seedPlaces = [
     boos: 4,
     description: "A very scary underground hotel in the heart of Arizona. With a population of 400, this place is a ghost town."
   },
-
-
-
-
-
-
-
-
 ]
-
 module.exports = seedPlaces;
