@@ -11,10 +11,10 @@
   <header ng-controller="AuthController as auth">
 
     <!--Create User  -->
-    <button ng-click="auth.toggleShowCreateUser(); auth.indexOfUserFormToShow = $index">Create User</button>
+    <button ng-click="auth.toggleShowCreateUser()">Create User</button>
 
     <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
-    <form ng-if="$index === auth.indexOfUserFormToShow && auth.showCreateUser"
+    <form ng-if="auth.showCreateUser"
     ng-submit="auth.createUser()">
       <input type ="text" ng-model="auth.username"/>
       <input type="password" ng-model="auth.password"/>
@@ -23,20 +23,23 @@
 
 
 <!-- Log In -->
-    <button ng-click="auth.toggleShowLogIn(); auth.indexOfLogInFormToShow = $index">Log In</button>
+    <button ng-click="auth.toggleShowLogIn()">Log In</button>
 
-    <form ng-if="$index === auth.indexOfLogInFormToShow && auth.showLogIn"
-    ng-submit="auth.showLogIn()">
+    <form ng-if="auth.showLogIn"
+    ng-submit="auth.logIn()">
       <input type = "text" ng-model="auth.username"/>
       <input type="password" ng-model="auth.password"/>
-      <input ng-click="auth.goApp()" type ="submit" value ="Log in (if you dare)"/>
-
+      <input type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
+    </form>
     <div ng-if="auth.loggedInUsername">
-    <!-- <a href ="#" ng-click=>Click</a> -->
+        Welcome, {{auth.loggedInUsername}}
+      </div>
+  <!-- <a href ="#" ng-click="auth.goApp()">Click</a>
+  <div ng-if="auth.loggedInUsername">
       Welcome, {{auth.loggedInUsername}}
-    </div>
-</form>
-  </header>
+    </div> -->
+
+</header>
 
 
 
@@ -47,41 +50,56 @@
     <div class="container">
       <table>
         <tr ng-repeat="place in ctrl.places">
-          <td>{{place.name}}</td>
-          <td>{{place.location}}</td>
+          <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
+          <td>{{place.name}}</td><br>
           <td><img src="{{place.image}}"></td>
-          <td>{{place.description}}</td>
-          <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td>
 
-    <td>
-      <button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
 
-      <form ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
-      ng-submit="ctrl.editPlace(place)">
+          <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
+          <td><button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button></td>
+          <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
+          <!-- EDIT FORM -->
+          <td><form
+            ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
+            ng-submit="ctrl.editPlace(place);">
+            <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
+          <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+          <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+          <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
+          <input type="submit" value="Update Place"/>
 
-        <form class="update-form" ng-if="ctrl.showEditForm" ng-submit="ctrl.editPlace(place)">
-
-        <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-        <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-        <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-        <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
-        <input type="submit" value="Update Place"/>
-
-        </form>
-      </td>
+          <!-- <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td> -->
     </tr>
   </table>
 
 
 
-
-   <form ng-submit="ctrl.createPlace()">
+  <!-- CREATE NEW HAUNTED PLACE FORM -->
+    <form ng-submit="ctrl.createPlace()">
       <input type="text" ng-model="ctrl.name" placeholder="name"/>
       <input type="text" ng-model="ctrl.location" placeholder="location"/>
       <input type="text" ng-model="ctrl.image" placeholder="img"/>
       <input type="text" ng-model="ctrl.description" placeholder="description"/>
       <input type = "submit" value = "Create New Haunted Place"/>
     </form>
+
+    <!-- SHOW PAGE MODAL -->
+
+    <div
+      ng-if="ctrl.showModal === true"
+       class="showModal">
+      <a
+        ng-click="ctrl.showOnePlace()"
+        href="#">x Close</a>
+      <div class="showContents">
+        <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+        <h2>{{ctrl.place.name}}</h2>
+        <label for="description">Description</label>
+        <p>{{ctrl.place.description}}</p>
+        {{ctrl.place.boos}}
+      </div>
+    </div>
+
 
 
 

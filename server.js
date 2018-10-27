@@ -6,11 +6,11 @@ const db = mongoose.connection;
 
 
 
-// app.use(session({
-//   secret: 'spookytime',
-//   resave: false,
-//   saveUninitialized: false
-// }))
+ app.use(session({
+  secret: 'spookytime',
+  resave: false,
+  saveUninitialized: false
+}))
 
 app.use(express.json())
 app.use(express.static('public'))
@@ -27,15 +27,15 @@ const PORT = process.env.PORT || 3000
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'haunted';
 
 //ROUTES
-app.get('/app', (req, res)=> {
-  if(req.session.currentUser) {
-    res.json(req.session.currentUser)
-  } else {
-    res.status(401).json({
-      status: 401,
-      message: 'not logged in'
-    })
-  }
+app.get('/app', (req, res)=>{
+    if(req.session.currentUser){
+        res.json(req.session.currentUser);
+    } else {
+        res.status(401).json({
+            status:401,
+            message:'not logged in'
+        });
+    }
 })
 
 

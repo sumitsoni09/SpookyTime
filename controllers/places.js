@@ -12,6 +12,14 @@ places.get('/', (req, res) => {
   })
 })
 
+// show route
+places.get('/:id', (req, res) => {
+  Places.findById(req.params.id, (err, foundPlace) => {
+    res.json(foundPlace)
+  })
+})
+
+// delete route
 places.delete('/:id', (req, res) => {
   Places.findByIdAndRemove(req.params.id, (err, deletedPlace) => {
     res.json(deletedPlace)
