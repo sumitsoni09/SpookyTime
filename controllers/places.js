@@ -4,7 +4,6 @@ const places = express.Router()
 const Places = require('../models/places.js')
 const placesSeed = require('../models/seed.js')
 
-
 // index page get route
 places.get('/', (req, res) => {
   Places.find({}, (err, foundPlaces) => {
@@ -47,12 +46,9 @@ places.get('/seed', (req, res)=> {
   })
 })
 
-
 places.get('/dropdatabase/areyousure', (req, res)=> {
   Places.collection.drop();
   res.send('You dropped the seed, congrats! Visit <a href ="/seed">HERE</a> to reseed.')
 })
-
-
 
 module.exports = places;
