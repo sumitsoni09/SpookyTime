@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
+
 router.delete('/', (req, res)=>{
   req.session.destroy(()=>{
     res.status(200).json({
@@ -11,6 +12,7 @@ router.delete('/', (req, res)=>{
       })
     })
   });
+
 
 router.post('/', (req,res)=>{
   User.findOne({username: req.body.username}, (err, foundUser)=>{
@@ -28,5 +30,6 @@ router.post('/', (req,res)=>{
     }
   })
 })
+
 
 module.exports = router;
