@@ -20,8 +20,6 @@
       <input type="password" ng-model="auth.password"/>
       <input type="submit" value="Become a Ghostly Ghoul"/>
     </form>
-
-
 <!-- Log In -->
     <button ng-click="auth.toggleShowLogIn()">Log In</button>
 
@@ -38,13 +36,7 @@
   <div ng-if="auth.loggedInUsername">
       Welcome, {{auth.loggedInUsername}}
     </div> -->
-
 </header>
-
-
-
-
-
   <body ng-controller="MainController as ctrl">
 
     <div class="container">
@@ -53,8 +45,6 @@
           <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
           <td>{{place.name}}</td><br>
           <td><img src="{{place.image}}"></td>
-
-
           <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
           <td><button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button></td>
           <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
@@ -72,8 +62,6 @@
     </tr>
   </table>
 
-
-
   <!-- CREATE NEW HAUNTED PLACE FORM -->
     <form ng-submit="ctrl.createPlace()">
       <input type="text" ng-model="ctrl.name" placeholder="name"/>
@@ -84,7 +72,7 @@
     </form>
 
     <!-- SHOW PAGE MODAL -->
-
+        
     <div
       ng-if="ctrl.showModal === true"
        class="showModal">
@@ -99,10 +87,6 @@
         {{ctrl.place.boos}}
       </div>
     </div>
-
-
-
-
     </div>
   </body>
 </html>
