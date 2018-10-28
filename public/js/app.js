@@ -6,28 +6,34 @@ app.controller('MainController', ['$http', function($http){
   this.showModal = false;
   this.places = '';
   this.place = '';
+  this.createForm = {};
+
+  this.$indexOfEditFormToShow = 1;
+
+  this.toggleShowEditForm = (place) => {
+    this.showEditForm = !this.showEditForm
+  }
+
+  this.showOnePlace = place => {
+    this.place = place;
+    this.showModal = !this.showModal;
+  }
+
+  // this.test = 'hello';
 
   // create new haunted place
   this.createPlace = function() {
     $http({
       method: 'POST',
       url: '/places',
-      data: {
-        name: this.name,
-        location: this.location,
-        image: this.image,
-        description: this.description
-      }
+      data: this.createForm
     }).then(function(response){
-      controller.getPlaces()
+      controller.places.push(response.data);
+      controller.createForm = {};
+      // controller.getPlaces()
     }, error => {
       console.log(error);
     })
-  }
-
-  this.showOnePlace = place => {
-    this.place = place;
-    this.showModal = !this.showModal;
   }
 
   // show all haunted places
@@ -39,6 +45,17 @@ app.controller('MainController', ['$http', function($http){
       controller.places = response.data
       // this.places = response.data
     }, error => {
+      console.log(error);
+    })
+  }
+
+  this.deletePlace = function(place){
+    $http({
+      method: 'DELETE',
+      url: '/places/' + place._id
+    }).then(function(response){
+      controller.getPlaces();
+    }, function(error){
       console.log(error);
     })
   }
@@ -61,23 +78,6 @@ app.controller('MainController', ['$http', function($http){
       console.log(err)
     })
 
-  }
-
-  this.deletePlace = function(place){
-    $http({
-      method: 'DELETE',
-      url: '/places/' + place._id
-    }).then(function(response){
-      controller.getPlaces();
-    }, function(error){
-      console.log(error);
-    })
-  }
-
-  this.$indexOfEditFormToShow = 1;
-
-  this.toggleShowEditForm = (place) => {
-    this.showEditForm = !this.showEditForm
   }
 
   this.getPlaces();

@@ -54,22 +54,22 @@
             ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
             ng-submit="ctrl.editPlace(place);">
             <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-          <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-          <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-          <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
-          <input type="submit" value="Update Place"/>
-
+            <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+            <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+            <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
+            <input type="submit" value="Update Place"/>
+          </form></td>
           <!-- <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td> -->
     </tr>
   </table>
 
   <!-- CREATE NEW HAUNTED PLACE FORM -->
     <form ng-submit="ctrl.createPlace()">
-      <input type="text" ng-model="ctrl.name" placeholder="Name"/>
-      <input type="text" ng-model="ctrl.location" placeholder="Location"/>
-      <input type="text" ng-model="ctrl.image" placeholder="Image"/>
-      <input type="text" ng-model="ctrl.description" placeholder="Description"/>
-      <input type = "submit" value = "Create New Haunted Place"/>
+      <input type="text" ng-model="ctrl.createForm.name" placeholder="Name"/>
+      <input type="text" ng-model="ctrl.createForm.location" placeholder="Location"/>
+      <input type="text" ng-model="ctrl.createForm.image" placeholder="Image"/>
+      <input type="text" ng-model="ctrl.createForm.description" placeholder="Description"/>
+      <input type="submit" value="Create New Haunted Place"/>
     </form>
 
     <!-- SHOW PAGE MODAL -->
