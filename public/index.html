@@ -15,10 +15,11 @@
     <button ng-click="auth.toggleShowCreateUser()">Create User</button>
 
     <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
-    <form class ="createUser" ng-if="auth.showCreateUser"
+    <form
+    ng-if="auth.showCreateUser"
     ng-submit="auth.createUser()">
-      <input type ="text" ng-model="auth.username" placeholder="Username"/>
-      <input type="password" ng-model="auth.password" placeholder="Password"/>
+      <input class="createUser" type ="text" ng-model="auth.username" placeholder="Username"/>
+      <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
       <input class="sign-up" type="submit" value="Become a Ghostly Ghoul"/>
     </form>
 <!-- Log In -->
