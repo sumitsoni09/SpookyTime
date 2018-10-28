@@ -7,6 +7,7 @@ app.controller('MainController', ['$http', function($http){
   this.places = '';
   this.place = '';
 
+  // create new haunted place
   this.createPlace = function() {
     $http({
       method: 'POST',
