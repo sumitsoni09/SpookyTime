@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bigelow+Rules|Butcherman|Creepster|Eater|Finger+Paint" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <title>Haunted Places</title>
   </head>
@@ -40,7 +41,9 @@
     </div> -->
 </header>
   <body ng-controller="MainController as ctrl">
-    <h1>Haunted Places</h1>
+    <div class="background">
+    <h1>Hidden Haunts</h1>
+  </div>
     <div class="container">
       <table>
         <tr ng-repeat="place in ctrl.places">
