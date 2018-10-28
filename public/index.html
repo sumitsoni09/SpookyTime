@@ -15,10 +15,11 @@
     <button ng-click="auth.toggleShowCreateUser()">Create User</button>
 
     <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
-    <form class ="createUser" ng-if="auth.showCreateUser"
+    <form
+    ng-if="auth.showCreateUser"
     ng-submit="auth.createUser()">
-      <input type ="text" ng-model="auth.username" placeholder="Username"/>
-      <input type="password" ng-model="auth.password" placeholder="Password"/>
+      <input class="createUser" type ="text" ng-model="auth.username" placeholder="Username"/>
+      <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
       <input class="sign-up" type="submit" value="Become a Ghostly Ghoul"/>
     </form>
 <!-- Log In -->
@@ -64,12 +65,12 @@
   </table>
 
   <!-- CREATE NEW HAUNTED PLACE FORM -->
-    <form ng-submit="ctrl.createPlace()">
-      <input type="text" ng-model="ctrl.name" placeholder="Name"/>
-      <input type="text" ng-model="ctrl.location" placeholder="Location"/>
-      <input type="text" ng-model="ctrl.image" placeholder="Image"/>
-      <input type="text" ng-model="ctrl.description" placeholder="Description"/>
-      <input type = "submit" value = "Create New Haunted Place"/>
+    <form  ng-submit="ctrl.createPlace()">
+      <input class="create" type="text" ng-model="ctrl.name" placeholder="Name"/>
+      <input class="create" type="text" ng-model="ctrl.location" placeholder="Location"/>
+      <input class="create" type="text" ng-model="ctrl.image" placeholder="Image"/>
+      <input class="create" type="text" ng-model="ctrl.description" placeholder="Description"/>
+      <input class="create-place" type = "submit" value = "Create New Haunted Place"/>
     </form>
 
     <!-- SHOW PAGE MODAL -->
