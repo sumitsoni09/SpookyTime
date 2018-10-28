@@ -5,6 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Creepster|Eater|Almendra+Display|Almendra+SC" rel="stylesheet">
     <title>Haunted Places</title>
   </head>
 
@@ -77,18 +78,35 @@
 
     <div
       ng-if="ctrl.showModal === true"
-       class="showModal">
-      <a
-        ng-click="ctrl.showOnePlace()"
-        href="#">x Close</a>
-      <div class="showContents">
-        <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+       class="showDetailsModal">
+
+      <div class="showDetailsContainer">
+
+        <div class="detailsImage">
+          <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+        </div>
+
         <h2>{{ctrl.place.name}}</h2>
-        <label for="description">Description</label>
-        <p>{{ctrl.place.description}}</p>
-        {{ctrl.place.boos}}
+
+        <div class="showDetailsContents">
+          <h3>Boo Rating: </h3>
+          <span>{{ctrl.place.boos}}</span>
+
+          <h3>Location: </h3>
+          <span class="location">{{ctrl.place.location}}</span>
+
+          <h3>Description: </h3>
+          <span>{{ctrl.place.description}}</span>
+
+        </div>
+
+        <a
+          ng-click="ctrl.showOnePlace()"
+          href="#">x Close</a>
+
       </div>
     </div>
+
     </div>
   </body>
 </html>
