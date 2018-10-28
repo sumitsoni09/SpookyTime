@@ -1,33 +1,26 @@
+/* Sumit's Work for CSS */
 body {
   background-color: black;
   color: white;
 }
 
-.create {
-  background-color: purple;
-  color: orange;
-  border: 3px solid black;
-  outline: none;
-  margin: 4px;
-  padding: 5px 10px;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.createUser {
-  background-color: purple;
-  color: orange;
-  border: 3px solid black;
-  outline: none;
-  margin: 4px;
-  padding: 5px 10px;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
 input:hover{
   border: 3px solid;
   border-color:#56ff00;
+}
+
+h1 {
+  color: rgba(120, 255, 0, .5);
+  font-size: 4em;
+  text-align: center;
+  margin: 10px 1em;
+  border: 1px solid white;
+  height: 1em;
+  padding: 1em;
+  background-image: url("images/hauntedhouse2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 ::placeholder {
@@ -36,7 +29,16 @@ input:hover{
   text-align: center;
 }
 
-.sign-up {
+.createPlace, .createUser, .logInUser {
+  background-color: purple;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+}
+
+.createPlaceButton, .createUserButton, .logInUserButton {
   background-color: purple;
   color: orange;
   border: 3px solid black;
@@ -46,40 +48,62 @@ input:hover{
   border: 1px solid white;
 }
 
-.sign-up:hover {
+.createPlaceButton:hover, .createUserButton:hover, .logInUserButton:hover{
   border: 1px solid white;
 }
 
-.log-in {
-  border: 1px solid white;
+
+
+/* ICE code */
+
+/* .createUserButton:hover {
+border: 1px solid white;
 }
 
-.log-in:hover {
-  border: 1px solid white;
-}
+.logInUserButton:hover {
+border: 1px solid white;
+} */
 
-.create-place {
-  background-color: purple;
-  color: orange;
-  border: 3px solid black;
-  outline: none;
-  margin: 4px;
-  padding: 5px 10px;
-  display: flex;
-  flex-wrap: nowrap;
-  border: 1px solid white;
-}
+/* .createUserButton {
+background-color: purple;
+color: orange;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+border: 1px solid white;
+} */
 
-.create-place:hover {
-  border: 1px solid white;
-}
+/* .logInUserButton {
+background-color: purple;
+color: orange;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+border: 1px solid white;
+} */
 
-h1 {
-  font-family: "Scary Halloween Font", sans-serif;
-  font-size: 4em;
-  text-align: center;
-  margin: 1em auto;
-  border: 1px solid white;
-  height: 1em auto;
-  padding: 1em;
-}
+/* .createUser {
+background-color: purple;
+color: orange;
+border: 3px solid black;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+} */
+
+/* .logInUser {
+background-color: purple;
+color: orange;
+border: 3px solid black;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+} */
