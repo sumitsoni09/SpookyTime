@@ -11,15 +11,24 @@ input:hover{
 
 h1 {
   color: rgba(120, 255, 0, .5);
-  font-size: 4em;
+  font-size: 8em;
   text-align: center;
-  margin: 10px 1em;
-  border: 1px solid white;
-  height: 1em;
-  padding: 1em;
+  margin: 1em;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0);
+  font-family: 'Creepster', cursive;
+  letter-spacing: 10px;
+}
+
+.background {
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0);
+  height: 24em;
+  margin: 10px auto;
+  width: auto;
   background-image: url("images/hauntedhouse2.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1662px 384px;
   background-position: center;
 }
 

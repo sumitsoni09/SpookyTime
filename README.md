@@ -13,6 +13,10 @@
 ## Create Admin
 
 ## Admin Log in, logout
+* Admin has the ability to edit, delete ALL data.
+
+## User Log in, logout
+* User has the ability to add, edit and delete their own data.
 
 ## gift shop (stretch)
 * user can buy spooky items
