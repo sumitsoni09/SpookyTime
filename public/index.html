@@ -3,16 +3,26 @@
   <head>
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/main.css">
     <title>Haunted Places</title>
   </head>
 
 <!-- Second Controller for create user/session -->
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+
   <header ng-controller="AuthController as auth">
 
     <!--Create User  -->
-    <button ng-click="auth.toggleShowCreateUser()">Create User</button>
+  <li>  <button ng-click="auth.toggleShowCreateUser()">Create User</button></li>
 
     <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
     <form
@@ -23,7 +33,7 @@
       <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
     </form>
 <!-- Log In -->
-    <button ng-click="auth.toggleShowLogIn()">Log In</button>
+  <li>  <button ng-click="auth.toggleShowLogIn()">Log In</button></li>
 
     <form ng-if="auth.showLogIn"
     ng-submit="auth.logIn()">
@@ -34,6 +44,15 @@
     <div ng-if="auth.loggedInUsername">
         Welcome, {{auth.loggedInUsername}}
       </div>
+
+    </ul>
+  </div>
+  </nav>
+
+
+
+
+
   <!-- <a href ="#" ng-click="auth.goApp()">Click</a>
   <div ng-if="auth.loggedInUsername">
       Welcome, {{auth.loggedInUsername}}
