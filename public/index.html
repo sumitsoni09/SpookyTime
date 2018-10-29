@@ -42,20 +42,27 @@
     </div> -->
 </header>
   <body ng-controller="MainController as ctrl">
-    <div class="background">
+  <div class="background">
     <h1>Hidden Haunts</h1>
   </div>
-    <div class="container">
-      <table>
-        <tr ng-repeat="place in ctrl.places">
-          <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
-          <td>{{place.name}}</td><br>
-          <td><img src="{{place.image}}"></td>
-          <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
-          <td><button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button></td>
-          <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
-    </tr>
-  </table>
+  <div class="container">
+    <div class="allCardContainer">
+      <div >
+        <ul class="cardDiv">
+          <li class="cardContent" ng-repeat="place in ctrl.places">
+            <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
+
+            <img class="cardImage" src="{{place.image}}"></td>
+            <h4>{{place.name}}</h4>
+            <button ng-click ="ctrl.deletePlace(place)">Delete</button>
+            <button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+             <button ng-click="ctrl.showOnePlace(place)">See Details</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
   <!-- EDIT FORM MODAL-->
   <div ng-if="ctrl.showEditForm === true" class="editModal">
 
