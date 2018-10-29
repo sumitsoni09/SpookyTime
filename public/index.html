@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Creepster|Eater|Almendra+Display|Almendra+SC" rel="stylesheet">
@@ -13,14 +12,13 @@
 <!-- Controller for create user/session -->
 
   <nav>
-    <div class="nav-wrapper">
       <a href="/" class="brand-logo"><img src ="/css/images/logo.png" height ="60px"/></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
 
   <header ng-controller="AuthController as auth">
 
     <!--Create User  -->
-  <li>  <button ng-click="auth.toggleShowCreateUser()">Create User</button></li>
+  <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "UserButton">Create User</button></li>
 
     <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
     <form
@@ -31,7 +29,7 @@
       <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
     </form>
 <!-- Log In -->
-  <li>  <button ng-click="auth.toggleShowLogIn()">Log In</button></li>
+  <li>  <a href = "#" ng-click="auth.toggleShowLogIn()" class = "logInButton">Log In</button></li>
 
     <form ng-if="auth.showLogIn"
     ng-submit="auth.logIn()">
