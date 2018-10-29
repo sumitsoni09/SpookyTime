@@ -11,7 +11,6 @@
   </head>
 
 <!-- Second Controller for create user/session -->
-<div ng-include="ctrl.includePath">
 <div class ="nav">
      <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
   <header ng-controller="AuthController as auth">
@@ -52,12 +51,16 @@
       Welcome, {{auth.loggedInUsername}}
     </div> -->
 </header>
-  <body ng-controller="MainController as ctrl">
-  <div class="background">
-    <h1 ng-click="ctrl.changeInclude('store')">Hidden Haunts</h1>
-  </div>
-  <div class="container">
 
+  <div class="background">
+    <div ng-controller = "StoreController as ctrl">
+    <h1>Hidden Haunts</h1>
+
+  </div>
+
+  <div class="container">
+    <div ng-include= ctrl.include
+<body ng-controller="MainController as ctrl">
       <div ng-include="ctrl.includePath"></div>
         <ul class="cardDiv">
           <li class="cardContent" ng-repeat="place in ctrl.places">
@@ -73,6 +76,11 @@
       </div>
     </div>
 
+
+
+
+
+</div>
 
   <!-- EDIT FORM MODAL-->
   <div ng-if="ctrl.showEditForm === true" class="editModal">
