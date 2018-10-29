@@ -18,7 +18,7 @@
   <header ng-controller="AuthController as auth">
 
     <!--Create User  -->
-  <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "UserButton">Create User</button></li>
+  <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">Create User</button></li>
 
     <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
     <form
@@ -29,7 +29,7 @@
       <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
     </form>
 <!-- Log In -->
-  <li>  <a href = "#" ng-click="auth.toggleShowLogIn()" class = "logInButton">Log In</button></li>
+  <li>  <a href = "#" ng-click="auth.toggleShowLogIn()" class = "login">Log In</button></li>
 
     <form ng-if="auth.showLogIn"
     ng-submit="auth.logIn()">
