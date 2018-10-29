@@ -11,7 +11,12 @@ let seedPlaces = [
     location: "Fort Worth, Texas",
     image: "https://i.pinimg.com/originals/71/62/fd/7162fdc56153d0b5c3f5d3fdf8d4124e.png",
     boos: 4,
-    description: "A paranormal hotel built in 1910, above a restaurant that features iron beds, antiques, and "
-  }
+    description: "A paranormal hotel built in 1910, above a restaurant that features iron beds, antiques, and spir "
+  },
+
+
+
+
+
 ]
 module.exports = seedPlaces;
