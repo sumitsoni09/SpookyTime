@@ -170,6 +170,44 @@ textarea {
   max-width: 637px;
 }
 
+/* RYLENS MAIN PAGE CONTENT STYLING */
+.container {
+  margin: 0 auto;
+
+}
+.cardDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.allCardContainer {
+  width: 95vw;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+.cardContent {
+  /* border: 1px solid white; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardContent > h4 {
+  font-family: 'Almendra SC', serif;
+  letter-spacing: 3px;
+  font-size: 30px;
+  text-align: center;
+}
+.cardImage {
+  height: 200px;
+}
+li {
+  list-style: none;
+  margin: 15px;
+}
+
 /* ICE code */
 
 /* .createUserButton:hover {
