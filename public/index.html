@@ -63,13 +63,13 @@
 
       <h2>Edit Hidden Haunt</h2>
 
-      <div class="editFormDiv">
-        <form class="editForm"
+      <div>
+        <form
           ng-submit="ctrl.editPlace(place);">
-          <input type="text" ng-model="ctrl.updatedName" placeholder="Name"/>
-          <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-          <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-          <textarea type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"></textarea>
+          <input class="editForm" type="text" ng-model="ctrl.updatedName" placeholder="Name"/>
+          <input class="editForm" type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+          <input class="editForm" type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+          <textarea class="editForm" type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"></textarea>
           <input class="editFormButton" type="submit" value="Update Place"/>
         </form>
       </div>
@@ -99,18 +99,19 @@
 
       <div class="showDetailsContainer">
 
+        <h2>{{ctrl.place.name}}</h2>
+
         <div class="detailsImage">
           <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
         </div>
 
-        <h2>{{ctrl.place.name}}</h2>
 
         <div class="showDetailsContents">
           <h3>Boo Rating: </h3>
           <span>{{ctrl.place.boos}}</span>
-
+          
           <h3>Location: </h3>
-          <span class="location">{{ctrl.place.location}}</span>
+          <span>{{ctrl.place.location}}</span>
 
           <h3>Description: </h3>
           <span>{{ctrl.place.description}}</span>
