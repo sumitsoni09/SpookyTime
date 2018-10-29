@@ -54,9 +54,9 @@
 
             <img class="cardImage" src="{{place.image}}"></td>
             <h4>{{place.name}}</h4>
-            <button ng-click ="ctrl.deletePlace(place)">Delete</button>
-            <button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
-             <button ng-click="ctrl.showOnePlace(place)">See Details</button>
+            <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
+            <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+             <button class="detailButton" ng-click="ctrl.showOnePlace(place)">See Details</button>
           </li>
         </ul>
       </div>
@@ -72,7 +72,7 @@
 
       <div>
         <form
-          ng-submit="ctrl.editPlace(place);">
+        ng-submit="ctrl.editPlace(place)">
           <input class="editForm" type="text" ng-model="ctrl.updatedName" placeholder="Name"/>
           <input class="editForm" type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
           <input class="editForm" type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
@@ -116,7 +116,7 @@
         <div class="showDetailsContents">
           <h3>Boo Rating: </h3>
           <span>{{ctrl.place.boos}}</span>
-          
+
           <h3>Location: </h3>
           <span>{{ctrl.place.location}}</span>
 

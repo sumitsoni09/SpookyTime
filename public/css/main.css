@@ -4,7 +4,7 @@ body {
   color: white;
 }
 
-input:hover, textarea:hover{
+input:hover, textarea:hover, button:hover{
   border: 3px solid;
   border-color:#56ff00;
 }
@@ -21,8 +21,7 @@ h1 {
 }
 
 .background {
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0);
+  border: 3px solid rgb(152, 70, 203);
   height: 24em;
   margin: 10px auto;
   width: auto;
@@ -51,13 +50,17 @@ h1 {
 
 
 .createPlaceButton, .createUserButton, .logInUserButton, .editFormButton {
-  background-color: purple;
-  color: orange;
-  border: 3px solid black;
-  outline: none;
-  margin: 4px;
-  padding: 5px 10px;
-  border: 1px solid white;
+  background-color: rgb(152, 70, 203);
+  border: 1px solid rgb(21, 221, 101);
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin-top: 25px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px
 }
 
 .createPlaceButton:hover, .createUserButton:hover, .logInUserButton:hover, .editFormButton:hover {
@@ -160,10 +163,6 @@ a:hover {
   border: 3px solid rgb(21, 221, 101);
 }
 
-.aTag {
-  border: 1px solid white;
-  width: 4px;
-}
 
 /* RYLEN'S EDIT PLACE MODAL STYLING */
 .editFormContainer {
@@ -179,7 +178,7 @@ a:hover {
 .editForm {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin: 10px auto;
 }
 
 textarea {
@@ -192,7 +191,6 @@ textarea {
 /* RYLENS MAIN PAGE CONTENT STYLING */
 .container {
   margin: 0 auto;
-
 }
 .cardDiv {
   display: flex;
@@ -207,6 +205,7 @@ textarea {
   justify-content: center; */
 }
 .cardContent {
+
   /* border: 1px solid white; */
   padding: 20px;
   display: flex;
@@ -220,13 +219,54 @@ textarea {
   text-align: center;
 }
 .cardImage {
+  border: 1px solid orange;
   height: 200px;
 }
 li {
   list-style: none;
   margin: 15px;
 }
+.detailButton{
+  background-color: rgb(152, 70, 203);
+  border: 3px solid black;
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin: 5px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px
+}
 
+.editButton {
+  background-color: rgb(152, 70, 203);
+  border: 3px solid black;
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin: 5px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.deleteButton {
+  background-color: rgb(152, 70, 203);
+  border: 3px solid black;
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin: 5px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px
+}
 /* ICE code */
 
 /* .createUserButton:hover {
