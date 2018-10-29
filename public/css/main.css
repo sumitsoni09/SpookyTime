@@ -1,4 +1,144 @@
 /* Sumit's Work for CSS */
+@import url('https://fonts.googleapis.com/css?family=Creepster');
+
+body {
+  background-color: black;
+  color: white;
+}
+
+input:hover{
+  border: 3px solid;
+  border-color:#56ff00;
+}
+
+h1 {
+  color: rgba(120, 255, 0, .5);
+  font-size: 8em;
+  text-align: center;
+  margin: 1em;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0);
+  font-family: 'Creepster', cursive;
+  letter-spacing: 10px;
+}
+
+.background {
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0);
+  height: 24em;
+  margin: 10px auto;
+  width: auto;
+  background-image: url("images/hauntedhouse2.jpg");
+  background-repeat: no-repeat;
+  background-size: 1662px 384px;
+  background-position: center;
+}
+
+::placeholder {
+  color: white;
+  opacity: .5;
+  text-align: center;
+}
+
+.createPlace, .createUser, .logInUser {
+  background-color: purple;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+}
+
+.createPlaceButton, .createUserButton, .logInUserButton {
+  background-color: purple;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+  border: 1px solid white;
+}
+
+.createPlaceButton:hover, .createUserButton:hover, .logInUserButton:hover{
+  border: 1px solid white;
+}
+
+
+
+/* .UserButton, .logInButton {
+  background-color: purple;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+  border: 1px solid white;
+}
+.UserButton:hover, .logInButton:hover {
+} */
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  opacity: .5
+}
+
+li {
+    float: left;
+}
+
+li a:hover {
+  color: purple;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* RYLENS MAIN PAGE CONTENT STYLING */
+.container {
+  margin: 0 auto;
+
+}
+.cardDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.allCardContainer {
+  width: 95vw;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+.cardContent {
+  /* border: 1px solid white; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardContent > h4 {
+  font-family: 'Almendra SC', serif;
+  letter-spacing: 3px;
+  font-size: 30px;
+  text-align: center;
+}
+.cardImage {
+  height: 200px;
+}
+li {
+  list-style: none;
+  margin: 15px;
+}
+
 body {
   background-color: black;
   color: white;
@@ -74,7 +214,6 @@ h1 {
 /* .createUserButton:hover {
 border: 1px solid white;
 }
-
 /* RYLEN'S SHOW DETAILS MODAL */
 .showDetailsModal, .editModal {
   background-color: rgba(0, 0, 0, 0.8);
@@ -267,12 +406,20 @@ li {
   text-decoration: none;
   font-size: 20px
 }
+
+nav {
+  margin: auto;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  width: 25em;
+  text-align: center;
+  font-size: 20px;
+}
 /* ICE code */
 
 /* .createUserButton:hover {
 border: 1px solid white;
 }
-
 .logInUserButton:hover {
 border: 1px solid white;
 } */
