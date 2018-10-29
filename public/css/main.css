@@ -1,4 +1,6 @@
 /* Sumit's Work for CSS */
+@import url('https://fonts.googleapis.com/css?family=Creepster');
+
 body {
   background-color: black;
   color: white;
@@ -73,7 +75,7 @@ border: 1px solid white;
 border: 1px solid white;
 } */
 
-/* .createUserButton {
+.createUserButton {
 background-color: purple;
 color: orange;
 outline: none;
@@ -82,9 +84,9 @@ padding: 5px 10px;
 display: flex;
 flex-wrap: nowrap;
 border: 1px solid white;
-} */
+}
 
-/* .logInUserButton {
+.logInUserButton {
 background-color: purple;
 color: orange;
 outline: none;
@@ -93,7 +95,7 @@ padding: 5px 10px;
 display: flex;
 flex-wrap: nowrap;
 border: 1px solid white;
-} */
+}
 
 /* .createUser {
 background-color: purple;
@@ -117,6 +119,6 @@ display: flex;
 flex-wrap: nowrap;
 } */
 
-.container {
-  display: flex;
+.nav-wrapper {
+  background-color: #750375;
 }
