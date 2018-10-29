@@ -13,6 +13,9 @@ app.controller('MainController', ['$http', function($http){
   this.toggleShowEditForm = (place) => {
     this.showEditForm = !this.showEditForm
   }
+  this.toggleShowNewForm = (place) => {
+    this.showNewForm = !this.showNewForm
+  }
 
   this.showOnePlace = place => {
     this.place = place;
@@ -30,6 +33,7 @@ app.controller('MainController', ['$http', function($http){
     }).then(function(response){
       controller.places.push(response.data);
       controller.createForm = {};
+      this.ShowNewForm = null;
       // controller.getPlaces()
     }, error => {
       console.log(error);

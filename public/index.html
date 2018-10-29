@@ -12,11 +12,10 @@
 
 <!-- Second Controller for create user/session -->
 <div class ="nav">
-     <a href="/" class="brand-logo"><img src ="/css/images/logo.png" height ="60px"/></a>
+     <button href="/" class="brand-logo"><img src ="/css/images/logo.png" height ="60px"/></button>
   <header ng-controller="AuthController as auth">
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
+      <a href="/partials/about.html">About</a>
       <a a href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
       <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">REGISTER</a>
     </nav>
@@ -102,6 +101,7 @@
     </div>
 
   </div>
+
 
   <!-- CREATE NEW HAUNTED PLACE FORM -->
     <form ng-submit="ctrl.createPlace()">
