@@ -2,7 +2,7 @@ const express = require('express')
 const places = express.Router()
 // require the Haunted Places model
 const Places = require('../models/places.js')
-const placesSeed = require('../models/seed.js')
+
 
 // index page get route
 places.get('/', (req, res) => {

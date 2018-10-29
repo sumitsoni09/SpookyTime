@@ -1,45 +1,5 @@
-<!-- <a href="/">Home</a>
+<a href="/">Home</a>
 <a href="/about">About</a>
 <form ng-href="/"  ng-click="auth.logOut()" method="POST">
   <input class="navlink" type="submit" name="" value="LOG OUT" />
-</form> -->
-
-<!-- Second Controller for create user/session -->
-<div class ="nav">
-     <button href="/" class="brand-logo"><img src ="/css/images/logo.png" height ="60px"/></button>
-  <header ng-controller="AuthController as auth">
-    <nav>
-      <a href="/partials/about.html">About</a>
-      <a a href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
-      <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">REGISTER</a>
-    </nav>
-    <!--Create User  -->
-    <!-- <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">Create User</a></li> -->
-
-    <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
-
-    <form
-    ng-if="auth.showCreateUser"
-    ng-submit="auth.createUser()">
-      <input class="createUser" type ="text" ng-model="auth.username" placeholder="Username"/>
-      <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
-      <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
-    </form>
-<!-- Log In -->
-     <!-- <li>  <a href = "#" ng-click="auth.toggleShowLogIn()" class = "login">Log In</a></li> -->
-
-    <form ng-if="auth.showLogIn"
-    ng-submit="auth.logIn()">
-      <input class="logInUser" type = "text" ng-model="auth.username" placeholder="Username"/>
-      <input class="logInUser" type="password" ng-model="auth.password" placeholder="Password"/>
-      <input class="logInUserButton" type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
-    </form>
-    <div ng-if="auth.loggedInUsername">
-        Welcome, {{auth.loggedInUsername}}
-      </div>
-      <form ng-href="/"  ng-click="auth.logOut()" method="POST">
-        <input class="navlink" type="submit" name="" value="LOG OUT" />
-      </form>
-    </ul>
-  </div>
-</div>
+</form>

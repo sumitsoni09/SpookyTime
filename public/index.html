@@ -11,6 +11,7 @@
   </head>
 
 <!-- Second Controller for create user/session -->
+<div ng-include="ctrl.includePath">
 <div class ="nav">
      <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
   <header ng-controller="AuthController as auth">
@@ -51,14 +52,13 @@
       Welcome, {{auth.loggedInUsername}}
     </div> -->
 </header>
-
   <body ng-controller="MainController as ctrl">
   <div class="background">
-    <h1>Hidden Haunts</h1>
+    <h1 ng-click="ctrl.changeInclude('store')">Hidden Haunts</h1>
   </div>
   <div class="container">
-    <div class="allCardContainer">
-      <div >
+
+      <div ng-include="ctrl.includePath"></div>
         <ul class="cardDiv">
           <li class="cardContent" ng-repeat="place in ctrl.places">
             <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
