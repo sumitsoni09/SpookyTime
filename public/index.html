@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bigelow+Rules|Butcherman|Creepster|Eater|Finger+Paint" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Creepster|Eater|Almendra+Display|Almendra+SC" rel="stylesheet">
-    <title>Haunted Places</title>
+    <title>Hidden Haunts</title>
   </head>
 
 <!-- Second Controller for create user/session -->
@@ -54,19 +54,33 @@
           <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
           <td><button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button></td>
           <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
-          <!-- EDIT FORM -->
-          <td><form
-            ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
-            ng-submit="ctrl.editPlace(place);">
-            <input class="editForm" type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-            <input class="editForm" type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-            <input class="editForm" type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-            <input class="editForm" type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
-            <input class="editFormButton" type="submit" value="Update Place"/>
-          </form></td>
-          <!-- <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td> -->
     </tr>
   </table>
+  <!-- EDIT FORM MODAL-->
+  <div ng-if="ctrl.showEditForm === true" class="editModal">
+
+    <div class="editFormContainer">
+
+      <h2>Edit Hidden Haunt</h2>
+
+      <div class="editFormDiv">
+        <form class="editForm"
+          ng-submit="ctrl.editPlace(place);">
+          <input type="text" ng-model="ctrl.updatedName" placeholder="Name"/>
+          <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+          <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+          <textarea type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"></textarea>
+          <input class="editFormButton" type="submit" value="Update Place"/>
+        </form>
+      </div>
+
+        <a
+          ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index"
+          href="#">x Close</a>
+
+    </div>
+
+  </div>
 
   <!-- CREATE NEW HAUNTED PLACE FORM -->
     <form ng-submit="ctrl.createPlace()">
