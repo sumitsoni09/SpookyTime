@@ -1,16 +1,22 @@
 /* Sumit's Work for CSS */
+@import url('https://fonts.googleapis.com/css?family=Creepster');
+
 body {
   background-color: black;
   color: white;
 }
 
+<<<<<<< HEAD
 input:hover, textarea:hover, button:hover{
+=======
+input:hover{
+>>>>>>> 71469a6b3feaa413424f8b42eb9ee8690ba67a4d
   border: 3px solid;
   border-color:#56ff00;
 }
 
 h1 {
-  color: rgba(120, 255, 0, .8);
+  color: rgba(120, 255, 0, .5);
   font-size: 8em;
   text-align: center;
   margin: 1em;
@@ -37,17 +43,22 @@ h1 {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .createPlace, .createUser, .logInUser, .editForm {
   background-color: rgb(152, 70, 203);
   color: rgb(21, 221, 101);
+=======
+.createPlace, .createUser, .logInUser {
+  background-color: purple;
+  color: orange;
+>>>>>>> 71469a6b3feaa413424f8b42eb9ee8690ba67a4d
   border: 3px solid black;
   outline: none;
   margin: 4px;
   padding: 5px 10px;
-  font-family: 'Almendra SC', serif;
-  font-size: 20px;
 }
 
+<<<<<<< HEAD
 
 .createPlaceButton, .createUserButton, .logInUserButton, .editFormButton {
   background-color: rgb(152, 70, 203);
@@ -64,17 +75,35 @@ h1 {
 }
 
 .createPlaceButton:hover, .createUserButton:hover, .logInUserButton:hover, .editFormButton:hover {
+=======
+.createPlaceButton, .createUserButton, .logInUserButton {
+  background-color: purple;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+  border: 1px solid white;
+}
+
+.createPlaceButton:hover, .createUserButton:hover, .logInUserButton:hover{
+>>>>>>> 71469a6b3feaa413424f8b42eb9ee8690ba67a4d
   border: 1px solid white;
 }
 
 
 
-/* ICE code */
-
-/* .createUserButton:hover {
-border: 1px solid white;
+/* .UserButton, .logInButton {
+  background-color: purple;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+  border: 1px solid white;
 }
 
+<<<<<<< HEAD
 /* RYLEN'S SHOW DETAILS MODAL */
 .showDetailsModal, .editModal {
   background-color: rgba(0, 0, 0, 0.8);
@@ -172,9 +201,22 @@ a:hover {
 .editFormDiv {
   display: flex;
   flex-wrap:wrap;
+=======
+.UserButton:hover, .logInButton:hover {
+
+} */
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+>>>>>>> 71469a6b3feaa413424f8b42eb9ee8690ba67a4d
   background-color: black;
+  opacity: .5
 }
 
+<<<<<<< HEAD
 .editForm {
   display: flex;
   flex-direction: column;
@@ -186,6 +228,21 @@ textarea {
   min-width: auto;
   max-width: auto;
   resize: none;
+=======
+li {
+    float: left;
+}
+
+li a:hover {
+  color: purple;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+>>>>>>> 71469a6b3feaa413424f8b42eb9ee8690ba67a4d
 }
 
 /* RYLENS MAIN PAGE CONTENT STYLING */
@@ -275,9 +332,9 @@ border: 1px solid white;
 
 .logInUserButton:hover {
 border: 1px solid white;
-} */
+}
 
-/* .createUserButton {
+.createUserButton {
 background-color: purple;
 color: orange;
 outline: none;
@@ -286,9 +343,9 @@ padding: 5px 10px;
 display: flex;
 flex-wrap: nowrap;
 border: 1px solid white;
-} */
+}
 
-/* .logInUserButton {
+.logInUserButton {
 background-color: purple;
 color: orange;
 outline: none;
