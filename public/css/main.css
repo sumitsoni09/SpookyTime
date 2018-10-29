@@ -417,6 +417,35 @@ nav {
   text-align: center;
   font-size: 20px;
 }
+
+.brand-logo {
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  /* line-height: 32px; */
+  padding: 0;
+  margin: 12px;
+  height: 12px;
+  align-self: center;
+  text-decoration: none;
+}
+
+.brandImg {
+  margin: 20px 0;
+  border: 3px solid black;
+}
+.brand-logo:hover {
+  border: rgb(0,0,0)
+}
+.brandImg:hover {
+    border: 3px solid rgb(21, 221, 101);
+}
+.tNav {
+  margin: 12px;
+}
 /* ICE code */
 
 /* .createUserButton:hover {
