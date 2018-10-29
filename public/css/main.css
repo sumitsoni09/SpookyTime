@@ -142,3 +142,57 @@ a {
   padding: 10px;
 
 }
+
+/* ICE code */
+
+/* .createUserButton:hover {
+border: 1px solid white;
+}
+
+.logInUserButton:hover {
+border: 1px solid white;
+} */
+
+/* .createUserButton {
+background-color: purple;
+color: orange;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+border: 1px solid white;
+} */
+
+/* .logInUserButton {
+background-color: purple;
+color: orange;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+border: 1px solid white;
+} */
+
+/* .createUser {
+background-color: purple;
+color: orange;
+border: 3px solid black;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+} */
+
+/* .logInUser {
+background-color: purple;
+color: orange;
+border: 3px solid black;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+} */
