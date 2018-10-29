@@ -79,16 +79,28 @@ h1 {
 
 } */
 
-nav {
-  display: flex;
-  position: absolute;
-  top: 0;
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  opacity: .5
 }
 
+li {
+    float: left;
+}
 
-.create:hover, .login:hover {
+li a:hover {
   color: purple;
-  flex-direction: row;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 /* RYLENS MAIN PAGE CONTENT STYLING */
