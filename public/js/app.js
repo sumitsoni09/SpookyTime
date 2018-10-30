@@ -9,6 +9,7 @@ app.controller('MainController', ['$http', function($http){
   this.place = '';
   this.createForm = {};
 
+
   this.indexOfEditFormToShow = 1;
   // TOGGLE THE EDIT MODAL
   this.toggleShowEditForm = (place) => {
@@ -93,6 +94,26 @@ app.controller('MainController', ['$http', function($http){
     })
 
   }
+
+  //   this.addBoos = (place) => {
+  //     console.log("this addBoos function is running")
+  //   $http({
+  //     method: 'GET',
+  //     url: '/',
+  //     data: {place}
+  //   }).then(function(response){
+  //     console.log(response)
+  //   // console.log(place.boos = (place.boos + 1))
+  //
+  // }, error => {
+  //   console.log(error)
+  // })
+  // }
+
+
+
+
+
   this.showEditForm = false;
   this.getPlaces();
 
@@ -102,6 +123,7 @@ app.controller('AuthController', ['$http', function($http){
 
   this.toggleShowCreateUser = false;
   this.toggleShowLogIn = false;
+
   const controller = this
 
   this.createUser = function(){
@@ -137,14 +159,17 @@ app.controller('AuthController', ['$http', function($http){
       method: 'GET',
       url: '/app'
     }).then(function(response){
-    console.log("hello")
-    controller.loggedInUsername = response.data.username
+    this.toggleHideOnLogIn = null;
+    controller.loggedInUsername = response.data.username;
     })
   }
   this.$indexOfUserFormToShow = 1;
   this.toggleShowCreateUser = () => {
     this.showCreateUser = !this.showCreateUser
   }
+
+
+
 
   this.$indexOfLogInFormToShow = 1;
   this.toggleShowLogIn = () => {

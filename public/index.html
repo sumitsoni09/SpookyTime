@@ -14,36 +14,23 @@
 
 <body ng-controller="MainController as ctrl">
   <header ng-controller="AuthController as auth">
-    <div class="nav">
-       <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
+<a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="80px"/></a>
+
     <div ng-controller="StoreController as ctrl">
 
-      <nav ng-include="'partials/navbar.html'"></nav>
-<nav class="formNav">
-      <a href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
+<nav ng-include="'partials/navbar.html'">
 
-      <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
+
 </nav>
-      <form
-      ng-if="auth.showCreateUser"
-      ng-submit="auth.createUser()">
-        <input class="createUser" type ="text" ng-model="auth.username" placeholder="Username"/>
-        <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
-        <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
-      </form>
 
-    <form ng-if="auth.showLogIn"
-    ng-submit="auth.logIn()">
-    <input class="logInUser" type = "text" ng-model="auth.username" placeholder="Username"/>
-    <input class="logInUser" type="password" ng-model="auth.password" placeholder="Password"/>
-    <input class="logInUserButton" type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
-  </form>
 
-      <div class="background">
-        <div ng-controller = "StoreController as ctrl">
-          <h1>Hidden Haunts</h1>
-        </div>
-      </div>
+
+
+<div class="background">
+  <div ng-controller = "StoreController as ctrl">
+      <h1>Hidden Haunts</h1>
+    </div>
+  </div>
 
 
       <div ng-include="ctrl.includePath"></div>
