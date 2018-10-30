@@ -27,12 +27,14 @@ input:hover{
   border-bottom: 3px solid rgb(152, 70, 203);
   /* border-color: orange; */
   height: 24em;
-  margin: 10px auto;
+  margin: 70px auto;
   width: auto;
   background-image: url("images/moons.jpeg");
   background-repeat: no-repeat;
   /* background-size: 1662px 384px; */
   background-position: center;
+
+
 }
 
 ::placeholder {
@@ -82,12 +84,19 @@ input:hover{
 
 .nav {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   background-color: black;
   align-items: flex-end;
+
 }
+.navLogin{
+  flex-direction: row;
+  align-items:
+}
+.loginforms {
+  justify-content: flex-end;
+}
+
 
 li {
     float: left;
@@ -467,11 +476,22 @@ nav {
     border: 3px solid rgb(21, 221, 101);
 }
 .tNav {
-  margin: 12px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 20px;
+  height: 100px;
+
 }
+
+#welcome {
+  text-transform: capitalize;
+  font-family: 'Creepster', cursive;
+  color: rgb(21, 221, 101);
+}
+
+
 /* About Page */
+.mission{
+   align-self: center;
+}
 .contact {
   display: flex;
   margin: auto 20px;
@@ -486,6 +506,9 @@ nav {
   padding: 20px;
  }
 
+.githublink a {
+  width: 200px
+}
 
 /* ICE code */
 
