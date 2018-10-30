@@ -11,8 +11,8 @@ input:hover{
   border-color:#56ff00;
 }
 
-h1 {
-  color: rgba(120, 255, 0, .5);
+/* h1 {
+  color: white;
   font-size: 8em;
   text-align: center;
   margin: 1em;
@@ -20,17 +20,18 @@ h1 {
   border-color: rgba(0, 0, 0, 0);
   font-family: 'Creepster', cursive;
   letter-spacing: 10px;
-}
+} */
 
 .background {
-  border: 1px solid;
-  border-color: rgba(0, 0, 0, 0);
+  border-top: 3px solid orange;
+  border-bottom: 3px solid rgb(152, 70, 203);
+  /* border-color: orange; */
   height: 24em;
   margin: 10px auto;
   width: auto;
-  background-image: url("images/hauntedhouse2.jpg");
+  background-image: url("images/moons.jpeg");
   background-repeat: no-repeat;
-  background-size: 1662px 384px;
+  /* background-size: 1662px 384px; */
   background-position: center;
 }
 
@@ -41,7 +42,7 @@ h1 {
 }
 
 .createPlace, .createUser, .logInUser {
-  background-color: purple;
+  background-color: ;
   color: orange;
   border: 3px solid black;
   outline: none;
@@ -152,17 +153,17 @@ input:hover, textarea:hover, button:hover{
 }
 
 h1 {
-  color: rgba(120, 255, 0, .8);
+  color: rgb(205, 106, 3);
   font-size: 8em;
   text-align: center;
-  margin: 1em;
+  margin: -10px;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0);
   font-family: 'Creepster', cursive;
   letter-spacing: 10px;
 }
 
-.background {
+/* .background {
   border: 3px solid rgb(152, 70, 203);
   height: 24em;
   margin: 10px auto;
@@ -171,7 +172,7 @@ h1 {
   background-repeat: no-repeat;
   background-size: 1662px 384px;
   background-position: center;
-}
+} */
 
 ::placeholder {
   color: white;
@@ -217,27 +218,30 @@ h1 {
 border: 1px solid white;
 }
 /* RYLEN'S SHOW DETAILS MODAL */
-.showDetailsModal, .editModal {
+.showDetailsModal, .editModal, .createModal {
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
   overflow: scroll;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
 }
+.editModal {
+  z-index: 2;
+}
 
-.showDetailsContainer, .editFormContainer {
+.showDetailsContainer, .editFormContainer, .createNewContainer {
   background-color: black;
   border: 3px solid rgb(155, 79, 215);
   height: 50vw;
   width: 70vw;
   margin: 0 auto;
-  margin-top: 130px;
+  /* margin-top: 130px; */
   margin-bottom: 25px;
   overflow: scroll;
   text-align: center;
@@ -261,7 +265,7 @@ h2 {
   color: rgb(21, 221, 101);
 }
 
-.showDetailsContents {
+.showDetailsContents,  {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -272,7 +276,7 @@ h2 {
   height: 20vw;
   width: 30vw;
   border: 7px inset rgb(152, 70, 203);
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 h3 {
@@ -306,17 +310,18 @@ a:hover {
 
 
 /* RYLEN'S EDIT PLACE MODAL STYLING */
-.editFormContainer {
+.editFormContainer, .createNewForm {
+  display: flex;
   flex-direction: column;
 }
 
 .editFormDiv {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   background-color: black;
 }
 
-.editForm {
+.editForm, .createNewForm {
   display: flex;
   flex-direction: column;
   margin: 10px auto;
