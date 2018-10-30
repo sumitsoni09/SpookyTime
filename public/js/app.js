@@ -92,6 +92,26 @@ app.controller('MainController', ['$http', function($http){
     })
 
   }
+
+  //   this.addBoos = (place) => {
+  //     console.log("this addBoos function is running")
+  //   $http({
+  //     method: 'GET',
+  //     url: '/',
+  //     data: {place}
+  //   }).then(function(response){
+  //     console.log(response)
+  //   // console.log(place.boos = (place.boos + 1))
+  //
+  // }, error => {
+  //   console.log(error)
+  // })
+  // }
+
+
+
+
+
   this.showEditForm = false;
   this.getPlaces();
 
