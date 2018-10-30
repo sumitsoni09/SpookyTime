@@ -11,14 +11,18 @@
   </head>
 
 <!-- Second Controller for create user/session -->
-<div class ="nav">
+
+
+
+  <div class="nav">
      <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
   <header ng-controller="AuthController as auth">
+
     <nav>
-      <a class="tNav" href="#">About</a>
       <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
       <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
     </nav>
+  </div>
     <!--Create User  -->
     <!-- <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">Create User</a></li> -->
 
@@ -58,14 +62,19 @@
 
   </div>
 
-  <div class="container">
-    <div ng-include= ctrl.include
 <body ng-controller="MainController as ctrl">
-      <div ng-include="ctrl.includePath"></div>
+
+  <div ng-controller="StoreController as ctrl">
+    <nav ng-include="'partials/navbar.html'">
+    </nav>
+
+    <div ng-include="ctrl.includePath"></div>
+
+    </div>
+
         <ul class="cardDiv">
           <li class="cardContent" ng-repeat="place in ctrl.places">
             <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
-
             <img class="cardImage" src="{{place.image}}"></td>
             <h4>{{place.name}}</h4>
             <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
