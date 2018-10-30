@@ -514,6 +514,14 @@ nav {
   width: 200px
 }
 
+.footer {
+  text-align: right;
+  padding-right: 40px;
+  border: 3px solid;
+  border-top-color: orange;
+  border-bottom-color: rgb(152, 70, 203);
+  color: white;
+}
 /* ICE code */
 
 /* .createUserButton:hover {
