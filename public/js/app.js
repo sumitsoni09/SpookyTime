@@ -84,7 +84,7 @@ app.controller('MainController', ['$http', function($http){
         description: this.updatedDescription
       }
     }).then((response)=> {
-      
+
       this.getPlaces();
       // this.showEditForm = null;
     }, (err)=> {
