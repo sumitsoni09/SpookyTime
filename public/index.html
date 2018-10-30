@@ -13,16 +13,16 @@
 <!-- Second Controller for create user/session -->
 
 
-
+  <body>
   <div class="nav">
      <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
-  <header ng-controller="AuthController as auth">
+    <header ng-controller="AuthController as auth">
 
-    <nav>
-      <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
-      <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
-    </nav>
-  </div>
+      <nav>
+        <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
+        <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
+      </nav>
+    </div>
     <!--Create User  -->
     <!-- <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">Create User</a></li> -->
 
@@ -66,13 +66,13 @@
   <div class="background">
     <div ng-controller = "StoreController as ctrl">
     <h1>Hidden Haunts</h1>
-
+    </div>
   </div>
   <!-- MAIN CONTENTS OF PAGE -->
   <div class="container">
     <button class="createPlaceButton" type="button" ng-click="ctrl.toggleCreatePlace()">Add Hidden Haunt</button>
     <div class="allCardContainer">
-      <div >
+      <div>
         <ul class="cardDiv">
           <li class="cardContent" ng-repeat="place in ctrl.places">
             <img class="cardImage" src="{{place.image}}"></td>
