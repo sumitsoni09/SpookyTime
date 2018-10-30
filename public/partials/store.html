@@ -1,7 +1,44 @@
 <div class="store">
-    <ul>
-      POOP
-      <li ng-repeat="store in ctrl.store">
-    {{store.name}}</li>
+  <ul ng-repeat="store in ctrl.store">
+  <li>  {{store.name}}</li>
+  <li><img class = "storeimg" src ="{{store.image}}"></li>
+    <li>{{store.price}}</li>
+  <li>{{store.description}}</li>
+
+
+</ul>
   </div>
 </div>
+<!-- show modal -->
+<div
+  ng-if="ctrl.showModal === true"
+   class="showDetailsModal">
+
+  <div class="showDetailsContainer">
+
+    <h2>{{ctrl.place.name}}</h2>
+
+    <div class="detailsImage">
+      <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+    </div>
+
+          <div class="showDetailsContents">
+            <h3>Boo Rating: </h3>
+            <span class="boos">{{ctrl.place.boos}}</span>
+
+            <h3>Location: </h3>
+            <span class="location">{{ctrl.place.location}}</span>
+
+            <h3>Description: </h3>
+            <span class="description">{{ctrl.place.description}}</span>
+
+          </div>
+
+
+
+          <a
+            ng-click="ctrl.showOnePlace()"
+            href="#">x Close</a>
+
+        </div>
+      </div>
