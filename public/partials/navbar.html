@@ -1,6 +1,23 @@
-<h5 class="tNav" ng-click="ctrl.changeInclude('about')">About</h5>
-<h5 class="tNav" ng-click="ctrl.changeInclude('store')">Store</h5>
-<h5 class="tNav" ng-click="ctrl.changeInclude('index')">Index</h5>
+
 <!-- <form ng-href="/"  ng-click="auth.logOut()" method="POST">
   <input class="navlink" type="submit" name="" value="LOG OUT" />
 </form> -->
+<div class="nav">
+   <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
+
+    <nav>
+      <!-- <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a> -->
+      <h5 class="tNav" ng-click="ctrl.changeInclude('login')">LOG IN</h5>
+      <!-- <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a> -->
+      <h5 class="tNav" ng-click="ctrl.changeInclude('register')">REGISTER</h5>
+
+    </nav>
+
+    <div ng-if="auth.loggedInUsername">
+        Welcome, {{auth.loggedInUsername}}
+    </div>
+
+    <h5 class="tNav" ng-click="ctrl.changeInclude('about')">About</h5>
+    <h5 class="tNav" ng-click="ctrl.changeInclude('store')">Store</h5>
+    <h5 class="tNav" ng-click="ctrl.changeInclude('index')">Index</h5>
+  </div>

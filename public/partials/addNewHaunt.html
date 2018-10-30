@@ -1,0 +1,21 @@
+<div class="createModal" ng-if="ctrl.showCreateModal === true">
+  <div class="createNewContainer">
+
+    <h2>Add a New Hidden Haunt</h2>
+
+    <div class="createNewForm">
+      <form ng-submit="ctrl.createPlace()">
+        <input class="createPlace" type="text" ng-model="ctrl.createForm.name" placeholder="Name"/>
+        <input class="createPlace" type="text" ng-model="ctrl.createForm.location" placeholder="Location"/>
+        <input class="createPlace" type="text" ng-model="ctrl.createForm.image" placeholder="Image"/>
+        <textarea class="createPlace" type="text" ng-model="ctrl.createForm.description" placeholder="Description"></textarea>
+        <input class="createPlaceButton" type="submit" value="Create New Haunted Place"/>
+      </form>
+    </div>
+
+    <a
+      ng-click="ctrl.toggleCreatePlace()"
+      href="#">x Close</a>
+
+  </div>
+</div>

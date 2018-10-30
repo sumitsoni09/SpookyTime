@@ -1,0 +1,40 @@
+<div
+
+  ng-if="ctrl.showModal === true"
+   class="showDetailsModal">
+
+  <div class="showDetailsContainer">
+
+    <h2>{{ctrl.place.name}}</h2>
+
+    <div class="detailsImage">
+      <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+    </div>
+
+    <div class="actionButtons">
+      <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
+      <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+    </div>
+
+
+
+    <div class="showDetailsContents">
+      <h3>Boo Rating: </h3>
+      <span class="boos">{{ctrl.place.boos}}</span>
+
+      <h3>Location: </h3>
+      <span class="location">{{ctrl.place.location}}</span>
+
+      <h3>Description: </h3>
+      <span class="description">{{ctrl.place.description}}</span>
+
+    </div>
+
+
+
+    <a
+      ng-click="ctrl.showOnePlace()"
+      href="#">x Close</a>
+
+  </div>
+</div>

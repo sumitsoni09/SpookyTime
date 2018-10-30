@@ -1,0 +1,6 @@
+<form ng-if="auth.showLogIn"
+ng-submit="auth.logIn()">
+  <input class="logInUser" type = "text" ng-model="auth.username" placeholder="Username"/>
+  <input class="logInUser" type="password" ng-model="auth.password" placeholder="Password"/>
+  <input class="logInUserButton" type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
+</form>

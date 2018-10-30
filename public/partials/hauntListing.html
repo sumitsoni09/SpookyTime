@@ -1,0 +1,16 @@
+<div class="container">
+  <button class="createPlaceButton" type="button" ng-click="ctrl.toggleCreatePlace()">Add Hidden Haunt</button>
+  <div class="allCardContainer">
+    <div>
+      <ul class="cardDiv">
+        <li class="cardContent" ng-repeat="place in ctrl.places">
+          <img class="cardImage" src="{{place.image}}"></td>
+          <h4>{{place.name}}</h4>
+          <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
+          <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+           <button class="detailButton" ng-click="ctrl.showOnePlace(place)">See Details</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

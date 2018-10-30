@@ -13,183 +13,66 @@
 <!-- Second Controller for create user/session -->
 
 
-<<<<<<< HEAD
-  <body>
-=======
 <body ng-controller="MainController as ctrl">
->>>>>>> 02e6d85b7cf309d044c49c554294745514af2943
-  <div class="nav">
-     <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
-    <header ng-controller="AuthController as auth">
-
-      <nav>
-        <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
-        <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
-      </nav>
-    </div>
-    <!--Create User  -->
-    <!-- <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">Create User</a></li> -->
-
-    <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
-
-    <form
-    ng-if="auth.showCreateUser"
-    ng-submit="auth.createUser()">
-      <input class="createUser" type ="text" ng-model="auth.username" placeholder="Username"/>
-      <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
-      <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
-    </form>
+  <header ng-controller="AuthController as auth">
 
     <div ng-controller="StoreController as ctrl">
-    <nav ng-include="'partials/navbar.html'">
-    </nav>
-     <div ng-include="ctrl.includePath"></div>
-     </div>
+      <nav ng-include="'partials/navbar.html'"></nav>
 
-<!-- Log In -->
-     <!-- <li>  <a href = "#" ng-click="auth.toggleShowLogIn()" class = "login">Log In</a></li> -->
 
-    <form ng-if="auth.showLogIn"
-    ng-submit="auth.logIn()">
-      <input class="logInUser" type = "text" ng-model="auth.username" placeholder="Username"/>
-      <input class="logInUser" type="password" ng-model="auth.password" placeholder="Password"/>
-      <input class="logInUserButton" type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
-    </form>
-    <div ng-if="auth.loggedInUsername">
-        Welcome, {{auth.loggedInUsername}}
-      </div>
-  </div>
-</div>
+      <div ng-include="ctrl.includePath"></div>
 
-  <!-- <a href ="#" ng-click="auth.goApp()">Click</a>
-  <div ng-if="auth.loggedInUsername">
-      Welcome, {{auth.loggedInUsername}}
-    </div> -->
-</header>
-
-  <div class="background">
-    <div ng-controller = "StoreController as ctrl">
-    <h1>Hidden Haunts</h1>
     </div>
+
+    <div class="background">
+      <div ng-controller = "StoreController as ctrl">
+      <h1>Hidden Haunts</h1>
+      </div>
+    </div>
+
+  </header>
+
+  <div ng-include="'partials/createUser.html'">
+
+    <div ng-include="ctrl.includePath"></div>
+
   </div>
+
+
 </div>
   <!-- MAIN CONTENTS OF PAGE -->
-  <div class="container">
-    <button class="createPlaceButton" type="button" ng-click="ctrl.toggleCreatePlace()">Add Hidden Haunt</button>
-    <div class="allCardContainer">
-      <div>
-        <ul class="cardDiv">
-          <li class="cardContent" ng-repeat="place in ctrl.places">
-            <img class="cardImage" src="{{place.image}}"></td>
-            <h4>{{place.name}}</h4>
-            <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
-            <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
-             <button class="detailButton" ng-click="ctrl.showOnePlace(place)">See Details</button>
-          </li>
-        </ul>
-      </div>
+  <div ng-include="'partials/hauntListing.html'">
+    <div class="ctrl.includePath">
+
     </div>
-</div>
+  </div>
+
 
   <!-- EDIT FORM MODAL-->
-  <div ng-repeat="place in ctrl.places" ng-if="ctrl.showEditForm === true" class="editModal">
-
-    <div class="editFormContainer">
-
-      <h2>Edit Hidden Haunt</h2>
-
-      <div>
-        {{place.name}}
-
-        <form
-
-        ng-submit="ctrl.place.editPlace(place)">
-
-          <input class="editForm" type="text" ng-model="ctrl.updatedName" placeholder="Name"/>
-          <input class="editForm" type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-          <input class="editForm" type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-          <!-- <input class="editForm" type="text" ng-model="ctrl.image" placeholder="Image URL"/> -->
-          <textarea class="editForm" type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"></textarea>
-          <input class="editFormButton" type="submit"  value="Update Haunt"/>
-        </form>
-      </div>
-
-        <a
-          ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.toggleShowEditForm()"
-          href="#">x Close</a>
+  <div ng-include="'partials/editHaunt.html'">
+    <div class="ctrl.includePath">
 
     </div>
-
   </div>
+
 
 
   <!-- CREATE NEW HIDDEN HAUNT FORM -->
-
-  <div class="createModal" ng-if="ctrl.showCreateModal === true">
-    <div class="createNewContainer">
-
-      <h2>Add a New Hidden Haunt</h2>
-
-      <div class="createNewForm">
-        <form ng-submit="ctrl.createPlace()">
-          <input class="createPlace" type="text" ng-model="ctrl.createForm.name" placeholder="Name"/>
-          <input class="createPlace" type="text" ng-model="ctrl.createForm.location" placeholder="Location"/>
-          <input class="createPlace" type="text" ng-model="ctrl.createForm.image" placeholder="Image"/>
-          <textarea class="createPlace" type="text" ng-model="ctrl.createForm.description" placeholder="Description"></textarea>
-          <input class="createPlaceButton" type="submit" value="Create New Haunted Place"/>
-        </form>
-      </div>
-
-      <a
-        ng-click="ctrl.toggleCreatePlace()"
-        href="#">x Close</a>
+  <div ng-include="'partials/addNewHaunt.html'">
+    <div class="ctrl.includePath">
 
     </div>
   </div>
 
 
     <!-- SHOW PAGE MODAL -->
-
-    <div
-
-      ng-if="ctrl.showModal === true"
-       class="showDetailsModal">
-
-      <div class="showDetailsContainer">
-
-        <h2>{{ctrl.place.name}}</h2>
-
-        <div class="detailsImage">
-          <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
-        </div>
-
-        <div class="actionButtons">
-          <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
-          <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
-        </div>
-
-
-
-        <div class="showDetailsContents">
-          <h3>Boo Rating: </h3>
-          <span class="boos">{{ctrl.place.boos}}</span>
-
-          <h3>Location: </h3>
-          <span class="location">{{ctrl.place.location}}</span>
-
-          <h3>Description: </h3>
-          <span class="description">{{ctrl.place.description}}</span>
-
-        </div>
-
-
-
-        <a
-          ng-click="ctrl.showOnePlace()"
-          href="#">x Close</a>
+    <div ng-include="'partials/showDetails.html'">
+      <div class="ctrl.includePath">
 
       </div>
     </div>
+
+
 
     </div>
   </body>
