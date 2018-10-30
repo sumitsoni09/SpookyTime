@@ -287,6 +287,20 @@ h3 {
 
 .location {
   text-align: center;
+  color: orange;
+  font-size: 35px;
+}
+
+.boos {
+  text-align: center;
+  color: orange;
+  font-size: 35px;
+}
+
+.description {
+  text-align: center;
+  color: orange;
+  font-size: 35px;
 }
 
 a {
@@ -365,8 +379,10 @@ textarea {
   text-align: center;
 }
 .cardImage {
-  border: 1px solid orange;
+  border: 3px solid orange;
+  width: 200px;
   height: 200px;
+  margin: auto;
 }
 li {
   list-style: none;

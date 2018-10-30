@@ -12,11 +12,12 @@ const PORT = process.env.PORT || 3000
 
 const User = require('./models/users.js')
 const Places = require('./models/places.js')
-const seed = require('./models/places.js')
+const store = require('./models/store.js')
 
 const sessionsController = require('./controllers/sessions.js')
 const usersController = require('./controllers/users.js')
 const placesController = require('./controllers/places.js')
+const storeController = require('./controllers/store.js')
 
 
 app.use(session({
@@ -52,6 +53,8 @@ app.use('/sessions', sessionsController)
 app.use('/users', usersController)
 
 app.use('/places', placesController)
+
+app.use('/', storeController)
 
 //ERROR / SUCCESS
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));

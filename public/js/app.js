@@ -151,3 +151,75 @@ app.controller('AuthController', ['$http', function($http){
   };
 
 }])
+
+
+app.controller('StoreController', ['$http', function($http){
+  const controller = this;
+  this.includePath = 'partials/store.html';
+  this.changeInclude = (path) => {
+  this.includePath = 'partials/'+ path + '.html';
+  }
+
+  this.createStore = function() {
+    $http({
+      method: 'POST',
+      url: '/store',
+      data: this.createStore
+    }).then(function(response){
+      controller.store.push(response.data);
+      controller.createStore = {};
+    }, error => {
+      console.log(error);
+    })
+  }
+
+
+  this.getStore = function(){
+    $http({
+      method: 'GET',
+      url: '/store'
+    }).then(function(response){
+      console.log(response.data);
+      controller.store = response.data
+    }, error => {
+      console.log(error);
+    })
+  }
+  // this.getStore();
+
+  this.deleteStore = function(store){
+    $http({
+      method: 'DELETE',
+      url: '/store/' + store._id
+    }).then(function(response){
+      controller.getStore();
+    }, function(error){
+      console.log(error);
+    })
+  }
+
+  //update haunted place
+  this.editPlace = function(place){
+    $http({
+      method: 'PUT',
+      url: '/store/' + store._id,
+      data: {
+        name: this.updatedName,
+        price: this.updatedPrice,
+        image: this.updatedImage,
+        description: this.updatedDescription
+      }
+    }).then((response)=> {
+      this.getStore();
+    }, (err)=> {
+      console.log(err)
+    })
+
+  }
+
+  this.getStore();
+
+
+
+
+}])

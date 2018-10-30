@@ -11,14 +11,18 @@
   </head>
 
 <!-- Second Controller for create user/session -->
-<div class ="nav">
+
+
+
+  <div class="nav">
      <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
   <header ng-controller="AuthController as auth">
+
     <nav>
-      <a class="tNav" href="#">About</a>
       <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
       <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
     </nav>
+  </div>
     <!--Create User  -->
     <!-- <li>  <a href = "#" ng-click="auth.toggleShowCreateUser()" class = "create">Create User</a></li> -->
 
@@ -52,9 +56,10 @@
     </div> -->
 </header>
 
-  <body ng-controller="MainController as ctrl">
   <div class="background">
+    <div ng-controller = "StoreController as ctrl">
     <h1>Hidden Haunts</h1>
+
   </div>
   <!-- MAIN CONTENTS OF PAGE -->
   <div class="container">
@@ -73,6 +78,11 @@
       </div>
     </div>
 
+
+
+
+
+</div>
 
   <!-- EDIT FORM MODAL-->
   <div ng-repeat="place in ctrl.places" ng-if="ctrl.showEditForm === true" class="editModal">
@@ -154,13 +164,13 @@
 
         <div class="showDetailsContents">
           <h3>Boo Rating: </h3>
-          <span>{{ctrl.place.boos}}</span>
+          <span class="boos">{{ctrl.place.boos}}</span>
 
           <h3>Location: </h3>
-          <span>{{ctrl.place.location}}</span>
+          <span class="location">{{ctrl.place.location}}</span>
 
           <h3>Description: </h3>
-          <span>{{ctrl.place.description}}</span>
+          <span class="description">{{ctrl.place.description}}</span>
 
         </div>
 
