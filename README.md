@@ -1,25 +1,36 @@
-# SpookyTime
+# Hidden Haunts
+![hidden haunts header](https://user-images.githubusercontent.com/42280967/47747105-c8d3a300-dc44-11e8-9113-5deb51cf29c4.png)
 
-#User Stories
 
-## Browse Haunted Places
-* search bar- filter by category - haunted house, haunted places, scare level, price
-* show photo, name, scare level
-* add haunted place
+## Made By:
+* Brooke Billmaier
+* Sumit Soni
+* Rylen del Rio
 
-## Show page for each place
-* edit, delete
+## Technologies Used
+* HTML
+* CSS
+* Mongoose
+* Express
+* Angular
+* Node.js
 
-## Create Admin
+Welcome to Hidden Haunts, your hub for exploring the paranormal world. With Hidden Haunts, users can view a list of huanted sites in the United States and view details about those haunts.
 
-## Admin Log in, logout
-* Admin has the ability to edit, delete ALL data.
+Approach Taken: A MEAN stack, full CRUD app. As a group we collectively created a Waffle.io board where we could easily manage and assign tasks. Back-end and Front-end functionality were created simultaneously with communication between members via Slack and Zoom.
 
-## User Log in, logout
-* User has the ability to add, edit and delete their own data.
+## User Stories
+* Only admin can add a new haunt, edit, delete a haunt.
+* Users can view details about a haunt.
+* Users can visit the gift shop.
+* Users can create a username and log in.
 
-## gift shop (stretch)
-* user can buy spooky items
+## Future Optimizations
+* ### Browse Haunted Places
+  - Search bar: filter huants by category - haunted house, haunted places, scare level
+* ### Rate Haunt
+  - User can rate the scare factor for each haunt.
 
-##credit
+
+#### All information on spooky sites attained from: 
 http://www.thrillophilia.com/blog/scary-places-around-the-world/
