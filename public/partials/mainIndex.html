@@ -20,18 +20,18 @@
 
 
 <!-- EDIT FORM MODAL-->
-<div ng-repeat="place in ctrl.places" ng-if="ctrl.showEditForm === true" class="editModal">
+<div ng-if="ctrl.showEditForm === true" class="editModal">
 
   <div class="editFormContainer">
 
     <h2>Edit Hidden Haunt</h2>
 
     <div>
-      {{place.name}}
+      {{ctrl.place.name}}
 
       <form
 
-      ng-submit="ctrl.place.editPlace(place)">
+      ng-submit="ctrl.editPlace(ctrl.place)">
 
         <input class="editForm" type="text" ng-model="ctrl.updatedName" placeholder="Name"/>
         <input class="editForm" type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
