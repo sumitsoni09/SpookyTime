@@ -175,7 +175,7 @@ app.controller('AuthController', ['$http', function($http){
 
 app.controller('StoreController', ['$http', function($http){
   const controller = this;
-  this.includePath = 'partials/index.html';
+  this.includePath = 'partials/mainIndex.html';
   this.changeInclude = (path) => {
   this.includePath = 'partials/'+ path + '.html';
   }
