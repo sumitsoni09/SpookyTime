@@ -441,7 +441,7 @@ li {
 
 nav {
   margin: auto;
-  margin-top: -60px;
+  margin-top: -80px;
   margin-bottom: 20px;
   width: 25em;
   text-align: center;
@@ -485,6 +485,10 @@ nav {
   text-transform: capitalize;
   font-family: 'Creepster', cursive;
   color: rgb(21, 221, 101);
+  position: absolute;
+  right: 40px;
+  top: 45px;
+  font-size:40px;
 }
 
 

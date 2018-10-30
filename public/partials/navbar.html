@@ -6,7 +6,12 @@
   <a class = "tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
   <div id = "welcome" ng-if="auth.loggedInUsername">
       Welcome, {{auth.loggedInUsername}}
+      <form ng-href="/"  ng-click="auth.logOut()" method="POST">
+
+        <input class="navlink" type="submit" name="" value="LOG OUT" />
+      </form>
   </div>
+
 
 
   <form
@@ -21,7 +26,7 @@
   ng-submit="auth.logIn()">
   <input class="logInUser" type = "text" ng-model="auth.username" placeholder="Username"/>
   <input class="logInUser" type="password" ng-model="auth.password" placeholder="Password"/>
-  <input class="logInUserButton" type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
+  <input class="logInUserButton" type ="submit" ng-click="auth.goApp(); auth.toggleHideOnLogIn" value ="Log in (if you dare)"/>
   </form>
 
 </nav>
