@@ -20,3 +20,6 @@
 
 ## gift shop (stretch)
 * user can buy spooky items
+
+##credit
+http://www.thrillophilia.com/blog/scary-places-around-the-world/
