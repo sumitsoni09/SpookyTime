@@ -148,7 +148,7 @@ app.controller('StoreController', ['$http', function($http){
   const controller = this;
   this.includePath = 'partials/store.html';
   this.changeInclude = (path) => {
-    this.includePath = 'partials/'+ path +'.html';
+  this.includePath = 'partials/'+ path + '.html';
   }
 
   this.createStore = function() {
@@ -170,11 +170,13 @@ app.controller('StoreController', ['$http', function($http){
       method: 'GET',
       url: '/store'
     }).then(function(response){
+      console.log(response.data);
       controller.store = response.data
     }, error => {
       console.log(error);
     })
   }
+  // this.getStore();
 
   this.deleteStore = function(store){
     $http({

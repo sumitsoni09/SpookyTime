@@ -15,7 +15,7 @@ store.get('/store', (req, res) => {
 store.get('/store/seed', (req, res)=> {
   Store.create(storeSeed, (err, store)=> {
     console.log(store)
-    res.redirect('/store')
+    res.redirect('/')
   })
 })
 
