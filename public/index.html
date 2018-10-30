@@ -35,6 +35,13 @@
       <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
       <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
     </form>
+
+    <div ng-controller="StoreController as ctrl">
+    <nav ng-include="'partials/navbar.html'">
+    </nav>
+     <div ng-include="ctrl.includePath"></div>
+     </div>
+
 <!-- Log In -->
      <!-- <li>  <a href = "#" ng-click="auth.toggleShowLogIn()" class = "login">Log In</a></li> -->
 
