@@ -13,7 +13,11 @@
 <!-- Second Controller for create user/session -->
 
 
+<<<<<<< HEAD
   <body>
+=======
+<body ng-controller="MainController as ctrl">
+>>>>>>> 02e6d85b7cf309d044c49c554294745514af2943
   <div class="nav">
      <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
     <header ng-controller="AuthController as auth">
@@ -68,6 +72,7 @@
     <h1>Hidden Haunts</h1>
     </div>
   </div>
+</div>
   <!-- MAIN CONTENTS OF PAGE -->
   <div class="container">
     <button class="createPlaceButton" type="button" ng-click="ctrl.toggleCreatePlace()">Add Hidden Haunt</button>
@@ -84,11 +89,6 @@
         </ul>
       </div>
     </div>
-
-
-
-
-
 </div>
 
   <!-- EDIT FORM MODAL-->
@@ -124,6 +124,7 @@
 
 
   <!-- CREATE NEW HIDDEN HAUNT FORM -->
+
   <div class="createModal" ng-if="ctrl.showCreateModal === true">
     <div class="createNewContainer">
 
