@@ -4,7 +4,7 @@
     <div>
       <ul class="cardDiv">
         <li class="cardContent" ng-repeat="place in ctrl.places">
-          <img class="cardImage" src="{{place.image}}"></td>
+          <img class="cardImage" src="{{place.image}}">
           <h4>{{place.name}}</h4>
           <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
           <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
