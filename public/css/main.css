@@ -27,7 +27,7 @@ input:hover{
   border-bottom: 3px solid rgb(152, 70, 203);
   /* border-color: orange; */
   height: 24em;
-  margin: 10px auto;
+  margin: 100px auto;
   width: auto;
   background-image: url("images/moons.jpeg");
   background-repeat: no-repeat;
@@ -431,14 +431,13 @@ li {
 }
 
 nav {
+  border: 1px solid white;
   margin: auto;
-  margin-top: -60px;
   margin-bottom: 20px;
   width: 25em;
   text-align: center;
   font-size: 20px;
-  width: 100%;
-  height: 40px;
+  height: 30px;
 }
 
 .brand-logo {
@@ -466,8 +465,9 @@ nav {
 .brandImg:hover {
     border: 3px solid rgb(21, 221, 101);
 }
-.tNav {
-  margin: 12px;
+
+.formNav {
+  margin-top: -10px;
 }
 /* ICE code */
 
