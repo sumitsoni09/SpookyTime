@@ -2,21 +2,28 @@ const app = angular.module('HauntedApp',[])
 
 app.controller('MainController', ['$http', function($http){
   const controller = this;
-  this.showEditForm = false;
+
   this.showModal = false;
+  this.showCreateModal = false;
   this.places = '';
   this.place = '';
   this.createForm = {};
 
-  this.$indexOfEditFormToShow = 1;
-
+  this.indexOfEditFormToShow = 1;
+  // TOGGLE THE EDIT MODAL
   this.toggleShowEditForm = (place) => {
+    this.place = place;
     this.showEditForm = !this.showEditForm
   }
   this.toggleShowNewForm = (place) => {
     this.showNewForm = !this.showNewForm
   }
+  // TOGGLE THE ADD NEW MODAL
+  this.toggleCreatePlace = () => {
 
+    this.showCreateModal = !this.showCreateModal
+  }
+  // TOGGLE THE SHOW DETAILS MODAL
   this.showOnePlace = place => {
     this.place = place;
     this.showModal = !this.showModal;
@@ -66,6 +73,7 @@ app.controller('MainController', ['$http', function($http){
 
   //update haunted place
   this.editPlace = function(place){
+    console.log('the edit function is running');
     $http({
       method: 'PUT',
       url: '/places/' + place._id,
@@ -76,14 +84,15 @@ app.controller('MainController', ['$http', function($http){
         description: this.updatedDescription
       }
     }).then((response)=> {
+      
       this.getPlaces();
-      this.showEditForm = null;
+      // this.showEditForm = null;
     }, (err)=> {
       console.log(err)
     })
 
   }
-
+  this.showEditForm = false;
   this.getPlaces();
 
 }])
@@ -148,7 +157,7 @@ app.controller('StoreController', ['$http', function($http){
   const controller = this;
   this.includePath = 'partials/store.html';
   this.changeInclude = (path) => {
-    this.includePath = 'partials/'+ path +'.html';
+  this.includePath = 'partials/'+ path + '.html';
   }
 
   this.createStore = function() {
@@ -170,11 +179,13 @@ app.controller('StoreController', ['$http', function($http){
       method: 'GET',
       url: '/store'
     }).then(function(response){
+      console.log(response.data);
       controller.store = response.data
     }, error => {
       console.log(error);
     })
   }
+  // this.getStore();
 
   this.deleteStore = function(store){
     $http({

@@ -2,7 +2,7 @@ const express = require('express')
 const places = express.Router()
 // require the Haunted Places model
 const Places = require('../models/places.js')
-const placesSeed = require('..models/seed.js')
+const placesSeed = require('../models/seed.js')
 
 
 // index page get route
@@ -37,7 +37,12 @@ places.delete('/:id', (req, res) => {
 
 // update place put route
 places.put('/:id', (req, res) => {
+  console.log('edit route is running');
   Places.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPlace) => {
+    console.log(err);
+    console.log(req.params.id);
+    console.log(req.body);
+    console.log(updatedPlace);
     res.json(updatedPlace)
   })
 })

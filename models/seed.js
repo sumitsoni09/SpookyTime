@@ -77,21 +77,12 @@ let seedPlaces = [
     description: "The steep Stanford Road drop off, immediately followed by a dead end, is aptly named The End of the World. If you get stuck at this dead end for too long, according to ghost story enthusiasts, you may meet your end at the hands of many members of the endless parade of freaks patrolling the woods."
   },
   {
-    name: "Helltown",
-    location: "Summit County, Ohio",
-    image:"https://photos.clevescene.com/wp-content/uploads/2016/09/helltown-ohio-and-3.jpg",
-    boos: 4,
-    description: "The steep Stanford Road drop off, immediately followed by a dead end, is aptly named The End of the World. If you get stuck at this dead end for too long, according to ghost story enthusiasts, you may meet your end at the hands of many members of the endless parade of freaks patrolling the woods."
-  },
-  {
     name: "The Island of Dolls",
     location: "Mexico",
     image: "https://lastminutegroup-view.thron.com/api/xcontents/resources/delivery/getThumbnail/lastminutegroup/960x0/8d3a7fda-6ad9-4e66-a1ff-c2d855c36551?",
     boos:4,
     description:  "Hanging from the trees of one of the floating islands you\'ll see the blank eyes of hundreds of decaying dolls staring soullessly back at you, many with severed limbs. According to local legend, the Isla de las Munecas (Island of the Dolls) was created by its caretaker. He discovered the body of a young girl who had drowned, and hung her washed-up doll on a tree to pay his respects. He spent the next fifty years adding to the number of dolls."
   }
-
-
 
 
 
