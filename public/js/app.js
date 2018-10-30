@@ -74,6 +74,7 @@ app.controller('MainController', ['$http', function($http){
   //update haunted place
   this.editPlace = function(place){
     console.log('the edit function is running');
+    console.log(place);
     $http({
       method: 'PUT',
       url: '/places/' + place._id,
