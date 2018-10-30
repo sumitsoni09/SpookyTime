@@ -2,14 +2,30 @@
 <!-- <form ng-href="/"  ng-click="auth.logOut()" method="POST">
   <input class="navlink" type="submit" name="" value="LOG OUT" />
 </form> -->
-<div class="nav">
-   <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a>
+<!-- <div class="nav">
+   <a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="60px"/></a> -->
 
     <nav>
-      <!-- <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a> -->
-      <h5 class="tNav" ng-click="ctrl.changeInclude('login')">LOG IN</h5>
-      <!-- <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a> -->
-      <h5 class="tNav" ng-click="ctrl.changeInclude('register')">REGISTER</h5>
+      <!-- <a class="tNav" href = "#" ng-click="auth.toggleShowLogIn()">LOG IN</a>
+      <form ng-if="auth.showLogIn"
+      ng-submit="auth.logIn()">
+        <input class="logInUser" type = "text" ng-model="auth.username" placeholder="Username"/>
+        <input class="logInUser" type="password" ng-model="auth.password" placeholder="Password"/>
+        <input class="logInUserButton" type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
+      </form> -->
+      <!-- <h5 class="tNav" ng-click="ctrl.changeInclude('login')">LOG IN</h5> -->
+      <!-- <a class="tNav" href = "#" ng-click="auth.toggleShowCreateUser()">REGISTER</a>
+      <form
+      ng-if="auth.showCreateUser"
+      ng-submit="auth.createUser()">
+        <input class="createUser" type ="text" ng-model="auth.username" placeholder="Username"/>
+        <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
+        <input class="createUserButton" type="submit" value="Become a Ghostly Ghoul"/>
+      </form> -->
+      <!-- <h5 class="tNav" ng-click="ctrl.changeInclude('createUser')">REGISTER</h5> -->
+      <a class="tNav" ng-click="ctrl.changeInclude('index')">Home</a>
+      <a class="tNav" ng-click="ctrl.changeInclude('about')">About</a>
+      <a class="tNav" ng-click="ctrl.changeInclude('store')">Store</a>
 
     </nav>
 
@@ -17,7 +33,4 @@
         Welcome, {{auth.loggedInUsername}}
     </div>
 
-    <h5 class="tNav" ng-click="ctrl.changeInclude('about')">About</h5>
-    <h5 class="tNav" ng-click="ctrl.changeInclude('store')">Store</h5>
-    <h5 class="tNav" ng-click="ctrl.changeInclude('index')">Index</h5>
   </div>
