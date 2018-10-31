@@ -72,7 +72,7 @@ let seedPlaces = [
   {
     name: "Helltown",
     location: "Summit County, Ohio",
-    image:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjj763Gqq3eAhUPbq0KHY0yDsUQjRx6BAgBEAU&url=http%3A%2F%2Fweekinweird.com%2F2014%2F08%2F18%2Fohios-helltown-legends-lies-lost-truths%2F&psig=AOvVaw1tyzPkEOMQs7sTGeSEo0nf&ust=1540960264261872",
+    image:"https://allthatsinteresting.com/wordpress/wp-content/uploads/2018/06/helltown-closed-road.jpg",
     boos: 4,
     description: "The steep Stanford Road drop off, immediately followed by a dead end, is aptly named The End of the World. If you get stuck at this dead end for too long, according to ghost story enthusiasts, you may meet your end at the hands of many members of the endless parade of freaks patrolling the woods."
   },

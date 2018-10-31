@@ -20,7 +20,6 @@ Welcome to Hidden Haunts, your hub for exploring the paranormal world. With Hidd
 Approach Taken: A MEAN stack, full CRUD app. As a group we collectively created a Waffle.io board where we could easily manage and assign tasks. Back-end and Front-end functionality were created simultaneously with communication between members via Slack and Zoom.
 
 ## User Stories
-* Only admin can add a new haunt, edit, delete a haunt.
 * Users can view details about a haunt.
 * Users can visit the gift shop.
 * Users can create a username and log in.
@@ -30,7 +29,9 @@ Approach Taken: A MEAN stack, full CRUD app. As a group we collectively created 
   - Search bar: filter huants by category - haunted house, haunted places, scare level
 * ### Rate Haunt
   - User can rate the scare factor for each haunt.
+* ### Only admin can add a new haunt, edit, delete a haunt.
+  - In the future only admin are able to see the edit and delete button as well as make changes
 
 
-#### All information on spooky sites attained from: 
+#### All information on spooky sites attained from:
 http://www.thrillophilia.com/blog/scary-places-around-the-world/
