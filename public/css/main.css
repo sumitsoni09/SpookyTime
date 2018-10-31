@@ -510,9 +510,7 @@ nav {
   padding: 20px;
  }
 
-.githublink a {
-  width: 200px
-}
+
 
 .footer {
   text-align: right;
@@ -521,6 +519,56 @@ nav {
   border-top-color: orange;
   border-bottom-color: rgb(152, 70, 203);
   color: white;
+}
+
+.about {
+  font-family: 'Almendra Display', cursive;
+  font-size: 35px;
+  margin: 40px;
+  color: orange;
+  text-align: center;
+}
+
+.mission {
+  font-family: 'Almendra SC', serif;
+  color: rgb(21, 221, 101);
+  font-size: 50px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: rgb(152, 70, 203);
+}
+
+.statement {
+font-family: 'Creepster', cursive;
+font-size: 30px;
+text-align: center;
+text-decoration: underline;
+text-decoration-color:  rgb(152, 70, 203);
+color: orange;
+margin: 20px;
+}
+
+.contact {
+  font-family: 'Almendra SC', serif;
+  font-size: 40px;
+  text-decoration: underline;
+  text-decoration-color: rgb(21, 221, 101);
+  margin: 0 80px;
+}
+
+.name {
+  font-size: 28px;
+}
+
+.person {
+  color: rgb(21, 221, 101);;
+  font-size: 30px;
+  font-family: 'Almendra Display', cursive;
+  text-align:center;
+}
+
+.githublink {
+  width: 230px;
 }
 /* ICE code */
 
