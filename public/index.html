@@ -4,91 +4,46 @@
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bigelow+Rules|Butcherman|Creepster|Eater|Finger+Paint" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Haunted Places</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Creepster|Eater|Almendra+Display|Almendra+SC" rel="stylesheet">
+    <title>Hidden Haunts</title>
   </head>
 
 <!-- Second Controller for create user/session -->
+
+<body ng-controller="MainController as ctrl">
   <header ng-controller="AuthController as auth">
+<a href="/" class="brand-logo"><img class="brandImg" src ="/css/images/logo.png" height ="80px"/></a>
 
-    <!--Create User  -->
-    <button ng-click="auth.toggleShowCreateUser()">Create User</button>
+    <div ng-controller="StoreController as ctrl">
 
-    <!-- <form ng-submit="auth.createUser()" ng-click="$indexOfUserFormToShow = $index"> -->
-    <form
-    ng-if="auth.showCreateUser"
-    ng-submit="auth.createUser()">
-      <input class="createUser" type ="text" ng-model="auth.username" placeholder="Username"/>
-      <input class="createUser" type="password" ng-model="auth.password" placeholder="Password"/>
-      <input class="sign-up" type="submit" value="Become a Ghostly Ghoul"/>
-    </form>
-<!-- Log In -->
-    <button ng-click="auth.toggleShowLogIn()">Log In</button>
+<nav ng-include="'partials/navbar.html'">
 
-    <form ng-if="auth.showLogIn"
-    ng-submit="auth.logIn()">
-      <input type = "text" ng-model="auth.username" placeholder="Username"/>
-      <input type="password" ng-model="auth.password" placeholder="Password"/>
-      <input class="log-in" type ="submit" ng-click="auth.goApp()" value ="Log in (if you dare)"/>
-    </form>
-    <div ng-if="auth.loggedInUsername">
-        Welcome, {{auth.loggedInUsername}}
-      </div>
-  <!-- <a href ="#" ng-click="auth.goApp()">Click</a>
-  <div ng-if="auth.loggedInUsername">
-      Welcome, {{auth.loggedInUsername}}
-    </div> -->
-</header>
-  <body ng-controller="MainController as ctrl">
-    <h1>Haunted Places</h1>
-    <div class="container">
-      <table>
-        <tr ng-repeat="place in ctrl.places">
-          <!-- WHEN USER CLICKS ON NAME, SHOW MODAL POPS UP -->
-          <td>{{place.name}}</td><br>
-          <td><img src="{{place.image}}"></td>
-          <td><button ng-click ="ctrl.deletePlace(place)">Delete</button></td>
-          <td><button ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button></td>
-          <td> <button ng-click="ctrl.showOnePlace(place)">See Details</button> </td>
-          <!-- EDIT FORM -->
-          <td><form
-            ng-if="$index === ctrl.indexOfEditFormToShow && ctrl.showEditForm"
-            ng-submit="ctrl.editPlace(place);">
-            <input type="text" ng-model="ctrl.updatedName"  placeholder="Name"/>
-          <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
-          <input type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
-          <input type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"/>
-          <input type="submit" value="Update Place"/>
 
-          <!-- <td> <button ng-click="ctrl.deletePlace(place)">Delete</button></td> -->
-    </tr>
-  </table>
+</nav>
 
-  <!-- CREATE NEW HAUNTED PLACE FORM -->
-    <form  ng-submit="ctrl.createPlace()">
-      <input class="create" type="text" ng-model="ctrl.name" placeholder="Name"/>
-      <input class="create" type="text" ng-model="ctrl.location" placeholder="Location"/>
-      <input class="create" type="text" ng-model="ctrl.image" placeholder="Image"/>
-      <input class="create" type="text" ng-model="ctrl.description" placeholder="Description"/>
-      <input class="create-place" type = "submit" value = "Create New Haunted Place"/>
-    </form>
 
-    <!-- SHOW PAGE MODAL -->
 
-    <div
-      ng-if="ctrl.showModal === true"
-       class="showModal">
-      <a
-        ng-click="ctrl.showOnePlace()"
-        href="#">x Close</a>
-      <div class="showContents">
-        <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
-        <h2>{{ctrl.place.name}}</h2>
-        <label for="description">Description</label>
-        <p>{{ctrl.place.description}}</p>
-        {{ctrl.place.boos}}
-      </div>
+
+<div class="background">
+  <div ng-controller = "StoreController as ctrl">
+      <h1>Hidden Haunts</h1>
     </div>
+  </div>
+
+
+      <div ng-include="ctrl.includePath"></div>
+
     </div>
+
+
+
+  </header>
+
   </body>
+
+  <footer>
+    <h5 class="footer">Copyright © 2018,“All Rights Reserved”, Rylen, Brooke, Sumit</h5>
+  </footer>
 </html>

@@ -1,33 +1,40 @@
+/* Sumit's Work for CSS */
+@import url('https://fonts.googleapis.com/css?family=Creepster');
+
 body {
   background-color: black;
   color: white;
 }
 
-.create {
-  background-color: purple;
-  color: orange;
-  border: 3px solid black;
-  outline: none;
-  margin: 4px;
-  padding: 5px 10px;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.createUser {
-  background-color: purple;
-  color: orange;
-  border: 3px solid black;
-  outline: none;
-  margin: 4px;
-  padding: 5px 10px;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
 input:hover{
   border: 3px solid;
   border-color:#56ff00;
+}
+
+/* h1 {
+  color: white;
+  font-size: 8em;
+  text-align: center;
+  margin: 1em;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0);
+  font-family: 'Creepster', cursive;
+  letter-spacing: 10px;
+} */
+
+.background {
+  border-top: 3px solid orange;
+  border-bottom: 3px solid rgb(152, 70, 203);
+  /* border-color: orange; */
+  height: 24em;
+  margin: 70px auto;
+  width: auto;
+  background-image: url("images/moons.jpeg");
+  background-repeat: no-repeat;
+  /* background-size: 1662px 384px; */
+  background-position: center;
+
+
 }
 
 ::placeholder {
@@ -36,7 +43,16 @@ input:hover{
   text-align: center;
 }
 
-.sign-up {
+.createPlace, .createUser, .logInUser {
+  background-color: ;
+  color: orange;
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+}
+
+.createPlaceButton, .createUserButton, .logInUserButton {
   background-color: purple;
   color: orange;
   border: 3px solid black;
@@ -46,40 +62,611 @@ input:hover{
   border: 1px solid white;
 }
 
-.sign-up:hover {
+.createPlaceButton:hover, .createUserButton:hover, .logInUserButton:hover{
   border: 1px solid white;
 }
 
-.log-in {
-  border: 1px solid white;
+.brand-logo {
+  background-color: black;
 }
 
-.log-in:hover {
-  border: 1px solid white;
-}
-
-.create-place {
+/* .UserButton, .logInButton {
   background-color: purple;
   color: orange;
   border: 3px solid black;
   outline: none;
   margin: 4px;
   padding: 5px 10px;
+  border: 1px solid white;
+}
+.UserButton:hover, .logInButton:hover {
+} */
+
+.nav {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: black;
+  align-items: flex-end;
+
+}
+.navLogin{
+  flex-direction: row;
+  align-items:
+}
+.loginforms {
+  justify-content: flex-end;
+}
+
+
+li {
+    float: left;
+}
+
+li a:hover {
+  color: purple;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* RYLENS MAIN PAGE CONTENT STYLING */
+.container {
+  margin: 0 auto;
+
+}
+.cardDiv {
   display: flex;
-  flex-wrap: nowrap;
-  border: 1px solid white;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.allCardContainer {
+  width: 95vw;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+.cardContent {
+  /* border: 1px solid white; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardContent > h4 {
+  font-family: 'Almendra SC', serif;
+  letter-spacing: 3px;
+  font-size: 30px;
+  text-align: center;
+}
+.cardImage {
+  height: 200px;
+}
+li {
+  list-style: none;
+  margin: 15px;
 }
 
-.create-place:hover {
-  border: 1px solid white;
+body {
+  background-color: black;
+  color: white;
+}
+
+input:hover, textarea:hover, button:hover{
+  border: 3px solid;
+  border-color:#56ff00;
 }
 
 h1 {
-  font-family: "Scary Halloween Font", sans-serif;
-  font-size: 4em;
+  color: rgb(205, 106, 3);
+  font-size: 8em;
   text-align: center;
-  margin: 1em auto;
-  border: 1px solid white;
-  height: 1em auto;
-  padding: 1em;
+  margin: -10px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0);
+  font-family: 'Creepster', cursive;
+  letter-spacing: 10px;
 }
+
+/* .background {
+  border: 3px solid rgb(152, 70, 203);
+  height: 24em;
+  margin: 10px auto;
+  width: auto;
+  background-image: url("images/hauntedhouse2.jpg");
+  background-repeat: no-repeat;
+  background-size: 1662px 384px;
+  background-position: center;
+} */
+
+::placeholder {
+  color: white;
+  opacity: .5;
+  text-align: center;
+}
+
+.createPlace, .createUser, .logInUser, .editForm {
+  background-color: rgb(152, 70, 203);
+  color: rgb(21, 221, 101);
+  border: 3px solid black;
+  outline: none;
+  margin: 4px;
+  padding: 5px 10px;
+  font-family: 'Almendra SC', serif;
+  font-size: 20px;
+}
+
+
+.createPlaceButton, .createUserButton, .logInUserButton, .editFormButton {
+  background-color: rgb(152, 70, 203);
+  border: 1px solid rgb(21, 221, 101);
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin-top: 25px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px
+}
+
+.createPlaceButton:hover, .createUserButton:hover, .logInUserButton:hover, .editFormButton:hover {
+  border: 1px solid white;
+}
+
+
+
+/* ICE code */
+
+/* .createUserButton:hover {
+border: 1px solid white;
+}
+/* RYLEN'S SHOW DETAILS MODAL */
+.showDetailsModal, .editModal, .createModal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.editModal {
+  z-index: 2;
+}
+
+.showDetailsContainer, .editFormContainer, .createNewContainer {
+  background-color: black;
+  border: 3px solid rgb(155, 79, 215);
+  height: 50vw;
+  width: 70vw;
+  margin: 0 auto;
+  /* margin-top: 130px; */
+  margin-bottom: 25px;
+  overflow: scroll;
+  text-align: center;
+  max-width: 646px;
+  max-height: 600px;
+  padding: 30px;
+  font-family: 'Almendra Display', cursive;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: rgb(152, 70, 203);
+
+}
+h2 {
+  font-family: 'Creepster', cursive;
+  letter-spacing: 3px;
+  font-size: 45px;
+  text-align: center;
+  color: rgb(21, 221, 101);
+}
+
+.showDetailsContents,  {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.detailsImage > img {
+  height: 20vw;
+  width: 30vw;
+  border: 7px inset rgb(152, 70, 203);
+  /* margin-left: 10px; */
+}
+
+h3 {
+  margin: 0 auto;
+  padding: 15px;
+  font-family: 'Almendra SC', serif;
+}
+
+.location {
+  text-align: center;
+  color: orange;
+  font-size: 35px;
+}
+
+.boos {
+  text-align: center;
+  color: orange;
+  font-size: 35px;
+}
+
+.description {
+  text-align: center;
+  color: orange;
+  font-size: 35px;
+}
+
+a {
+  background-color: rgb(152, 70, 203);
+  border: 1px solid rgb(21, 221, 101);
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  /* line-height: 32px; */
+  padding: 10px;
+  margin-top: 25px;
+  width: 90px;
+  align-self: center;
+  text-decoration: none;
+}
+
+a:hover {
+  border: 3px solid rgb(21, 221, 101);
+}
+
+
+/* RYLEN'S EDIT PLACE MODAL STYLING */
+.editFormContainer, .createNewForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.editFormDiv {
+  display: flex;
+  flex-wrap:nowrap;
+  background-color: black;
+}
+
+.editForm, .createNewForm {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+}
+
+textarea {
+  max-height: 150px;
+  min-width: auto;
+  max-width: auto;
+  resize: none;
+}
+
+/* RYLENS MAIN PAGE CONTENT STYLING */
+.container {
+  margin: 0 auto;
+}
+.cardDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.allCardContainer {
+  width: 95vw;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+.cardContent {
+
+  /* border: 1px solid white; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardContent > h4 {
+  font-family: 'Almendra SC', serif;
+  letter-spacing: 3px;
+  font-size: 30px;
+  text-align: center;
+}
+.cardImage {
+  border: 3px solid orange;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+  margin: 15px;
+}
+
+.detailButton{
+  background-color: rgb(152, 70, 203);
+  border: 3px solid black;
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin: 5px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px
+}
+
+.editButton {
+  background-color: rgb(152, 70, 203);
+  border: 3px solid black;
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin: 5px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.deleteButton {
+  background-color: rgb(152, 70, 203);
+  border: 3px solid black;
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  padding: 10px;
+  margin: 5px;
+  align-self: center;
+  text-decoration: none;
+  font-size: 20px
+}
+
+nav {
+  margin: auto;
+  margin-top: -80px;
+  margin-bottom: 20px;
+  width: 25em;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  height: 40px;
+}
+
+.brand-logo {
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 3px;
+  color: rgb(21, 221, 101);
+  letter-spacing: 3px;
+  font-family: 'Creepster', cursive;
+  /* line-height: 32px; */
+  padding: 0;
+  margin: 12px;
+  height: ;
+  align-self: center;
+  text-decoration: none;
+}
+
+.brandImg {
+  margin: 20px 0;
+  border: 3px solid black;
+}
+.brand-logo:hover {
+  border: rgb(0,0,0)
+}
+.brandImg:hover {
+    border: 3px solid rgb(21, 221, 101);
+}
+.tNav {
+  margin-left: 20px;
+  height: 100px;
+
+}
+
+#welcome {
+  text-transform: capitalize;
+  font-family: 'Creepster', cursive;
+  color: rgb(21, 221, 101);
+  position: absolute;
+  right: 40px;
+  top: 45px;
+  font-size:40px;
+}
+
+
+/* About Page */
+.mission{
+   align-self: center;
+}
+.contact {
+  display: flex;
+  margin: auto 20px;
+}
+
+.container {
+  align-items: center;
+}
+.person {
+  flex-direction: row;
+  margin: 20px;
+  padding: 20px;
+ }
+
+
+
+.footer {
+  text-align: right;
+  padding-right: 40px;
+  border: 3px solid;
+  border-top-color: orange;
+  border-bottom-color: rgb(152, 70, 203);
+  color: white;
+}
+
+.about {
+  font-family: 'Almendra Display', cursive;
+  font-size: 35px;
+  margin: 40px;
+  color: orange;
+  text-align: center;
+}
+
+.mission {
+  font-family: 'Almendra SC', serif;
+  color: rgb(21, 221, 101);
+  font-size: 50px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: rgb(152, 70, 203);
+}
+
+.statement {
+font-family: 'Creepster', cursive;
+font-size: 30px;
+text-align: center;
+text-decoration: underline;
+text-decoration-color:  rgb(152, 70, 203);
+color: orange;
+margin: 20px;
+}
+
+.contact {
+  font-family: 'Almendra SC', serif;
+  font-size: 40px;
+  text-decoration: underline;
+  text-decoration-color: rgb(21, 221, 101);
+  margin: 0 80px;
+}
+
+.name {
+  font-size: 28px;
+}
+
+.person {
+  color: rgb(21, 221, 101);;
+  font-size: 30px;
+  font-family: 'Almendra Display', cursive;
+  text-align:center;
+}
+
+.githublink {
+  width: 230px;
+}
+
+.productContainer {
+  margin: 0 auto;
+}
+.productDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+.allProductContainer {
+  width: 95vw;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+/* . {
+  /* border: 1px solid white; */
+  /* padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* . {
+  border: 3px solid orange;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+} */
+
+.productName {
+  font-family: 'Almendra SC', serif;
+  font-size: 20px;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+}
+
+/* ICE code */
+
+/* .createUserButton:hover {
+border: 1px solid white;
+}
+.logInUserButton:hover {
+border: 1px solid white;
+} */
+
+/* .createUserButton {
+background-color: purple;
+color: orange;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+border: 1px solid white;
+} */
+
+/* .logInUserButton {
+background-color: purple;
+color: orange;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+border: 1px solid white;
+} */
+
+/* .createUser {
+background-color: purple;
+color: orange;
+border: 3px solid black;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+} */
+
+/* .logInUser {
+background-color: purple;
+color: orange;
+border: 3px solid black;
+outline: none;
+margin: 4px;
+padding: 5px 10px;
+display: flex;
+flex-wrap: nowrap;
+} */

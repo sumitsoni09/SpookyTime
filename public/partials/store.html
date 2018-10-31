@@ -1,0 +1,47 @@
+<div class="productContainer">
+<div ng-repeat="store in ctrl.store">
+  <div class="allProductdContainer">
+    <div>
+      <ul class="productDiv">
+        <h4 class="productName">{{store.name}}</h4>
+        <img class = "cardImage" src ="{{store.image}}">
+          <li class="product">{{store.description}}</li>
+          <li class="price">{{store.price}}</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- show modal -->
+<!-- <div
+  ng-if="ctrl.showModal === true"
+   class="showDetailsModal">
+
+  <div class="showDetailsContainer">
+
+    <h2>{{ctrl.store.name}}</h2>
+
+    <div class="detailsImage">
+      <img src="{{ctrl.store.image}}" alt="An image of {{ctrl.store.name}}" />
+    </div>
+
+          <div class="showDetailsContents">
+            <h3>Boo Rating: </h3>
+            <span class="boos">{{ctrl.store.boos}}</span>
+
+            <h3>Location: </h3>
+            <span class="location">{{ctrl.store.location}}</span>
+
+            <h3>Description: </h3>
+            <span class="description">{{ctrl.store.description}}</span>
+
+          </div>
+
+
+
+          <a
+            ng-click="ctrl.showOnePlace()"
+            href="#">x Close</a>
+
+        </div>
+      </div> -->

@@ -4,6 +4,7 @@ const places = express.Router()
 const Places = require('../models/places.js')
 const placesSeed = require('../models/seed.js')
 
+
 // index page get route
 places.get('/', (req, res) => {
   Places.find({}, (err, foundPlaces) => {
@@ -11,17 +12,11 @@ places.get('/', (req, res) => {
   })
 })
 
-// show route
-places.get('/:id', (req, res) => {
-  Places.findById(req.params.id, (err, foundPlace) => {
-    res.json(foundPlace)
-  })
-})
-
-// delete route
-places.delete('/:id', (req, res) => {
-  Places.findByIdAndRemove(req.params.id, (err, deletedPlace) => {
-    res.json(deletedPlace)
+// seed route
+places.get('/seed', (req, res)=> {
+  Places.create(placesSeed, (err, places)=> {
+    console.log(places)
+    res.redirect('/')
   })
 })
 
@@ -32,19 +27,27 @@ places.post('/', (req, res) => {
   })
 })
 
+
+// delete route
+places.delete('/:id', (req, res) => {
+  Places.findByIdAndRemove(req.params.id, (err, deletedPlace) => {
+    res.json(deletedPlace)
+  })
+})
+
 // update place put route
 places.put('/:id', (req, res) => {
+  console.log('edit route is running');
   Places.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPlace) => {
+    console.log(err);
+    console.log(req.params.id);
+    console.log(req.body);
+    console.log(updatedPlace);
     res.json(updatedPlace)
   })
 })
 
-places.get('/seed', (req, res)=> {
-  Places.create(placesSeed, (err, pets)=> {
-    console.log(places)
-    res.redirect('/')
-  })
-})
+
 
 places.get('/dropdatabase/areyousure', (req, res)=> {
   Places.collection.drop();

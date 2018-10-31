@@ -4,7 +4,7 @@ const placesSchema = new mongoose.Schema({
   name: String,
   location: String,
   image: String,
-  boos: Number,
+  boos: String,
   description: String
 })
 

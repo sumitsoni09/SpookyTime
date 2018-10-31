@@ -1,0 +1,121 @@
+<!-- MAIN CONTENTS OF PAGE -->
+<div ng-controller="MainController as ctrl">
+<div class="container">
+  <button class="createPlaceButton" type="button" ng-click="ctrl.toggleCreatePlace()">Add Hidden Haunt</button>
+  <div class="allCardContainer">
+    <div>
+      <ul class="cardDiv">
+        <li class="cardContent" ng-repeat="place in ctrl.places">
+          <img class="cardImage" src="{{place.image}}">
+          <h4>{{place.name}}</h4>
+          <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
+          <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+           <button class="detailButton" ng-click="ctrl.showOnePlace(place)">See Details</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- EDIT FORM MODAL-->
+<div ng-if="ctrl.showEditForm === true" class="editModal">
+
+  <div class="editFormContainer">
+
+    <h2>Edit Hidden Haunt</h2>
+
+    <div>
+      {{ctrl.place.name}}
+
+      <form
+
+      ng-submit="ctrl.editPlace(ctrl.place)">
+
+        <input class="editForm" type="text" ng-model="ctrl.updatedName" placeholder="Name"/>
+        <input class="editForm" type="text" ng-model="ctrl.updatedLocation" placeholder="Location"/>
+        <input class="editForm" type="text" ng-model="ctrl.updatedImage" placeholder="Image URL"/>
+        <!-- <input class="editForm" type="text" ng-model="ctrl.image" placeholder="Image URL"/> -->
+        <textarea class="editForm" type="text" ng-model="ctrl.updatedDescription"  placeholder="Description"></textarea>
+        <input class="editFormButton" type="submit"  value="Update Haunt"/>
+      </form>
+    </div>
+
+      <a
+        ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.toggleShowEditForm()"
+        href="#">x Close</a>
+
+  </div>
+
+</div>
+
+
+
+
+<!-- CREATE NEW HIDDEN HAUNT FORM -->
+<div class="createModal" ng-if="ctrl.showCreateModal === true">
+  <div class="createNewContainer">
+
+    <h2>Add a New Hidden Haunt</h2>
+
+    <div class="createNewForm">
+      <form ng-submit="ctrl.createPlace()">
+        <input class="createPlace" type="text" ng-model="ctrl.createForm.name" placeholder="Name"/>
+        <input class="createPlace" type="text" ng-model="ctrl.createForm.location" placeholder="Location"/>
+        <input class="createPlace" type="text" ng-model="ctrl.createForm.image" placeholder="Image"/>
+        <textarea class="createPlace" type="text" ng-model="ctrl.createForm.description" placeholder="Description"></textarea>
+        <input class="createPlaceButton" type="submit" value="Create New Haunted Place"/>
+      </form>
+    </div>
+
+    <a
+      ng-click="ctrl.toggleCreatePlace()"
+      href="#">x Close</a>
+
+  </div>
+</div>
+
+
+
+  <!-- SHOW PAGE MODAL -->
+  <div
+
+    ng-if="ctrl.showModal === true"
+     class="showDetailsModal">
+
+    <div class="showDetailsContainer">
+
+      <h2>{{ctrl.place.name}}</h2>
+
+      <div class="detailsImage">
+        <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+      </div>
+
+      <!-- <div class="actionButtons">
+        <button class="deleteButton" ng-click ="ctrl.deletePlace(place)">Delete</button>
+        <button class="editButton" ng-click="ctrl.toggleShowEditForm(place); ctrl.indexOfEditFormToShow = $index">Edit</button>
+      </div> -->
+
+
+
+      <div class="showDetailsContents">
+        <h3>Boo Rating: </h3>
+        <span class="boos">{{ctrl.place.boos}}</span>
+
+        <h3>Location: </h3>
+        <span class="location">{{ctrl.place.location}}</span>
+
+        <h3>Description: </h3>
+        <span class="description">{{ctrl.place.description}}</span>
+
+      </div>
+
+
+
+      <a
+        ng-click="ctrl.showOnePlace()"
+        href="#">x Close</a>
+
+    </div>
+  </div>
