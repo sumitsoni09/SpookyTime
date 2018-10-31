@@ -181,6 +181,7 @@ app.controller('AuthController', ['$http', function($http){
 
 app.controller('StoreController', ['$http', function($http){
   const controller = this;
+  this.showModal = false;
   this.includePath = 'partials/mainIndex.html';
   this.changeInclude = (path) => {
   this.includePath = 'partials/'+ path + '.html';
@@ -245,6 +246,15 @@ app.controller('StoreController', ['$http', function($http){
 
   this.getStore();
 
+  this.toggleCreatePlace = () => {
+
+    this.showCreateModal = !this.showCreateModal
+  }
+  // TOGGLE THE SHOW DETAILS MODAL
+  this.showOnePlace = place => {
+    this.place = place;
+    this.showModal = !this.showModal;
+  }
 
 
 
