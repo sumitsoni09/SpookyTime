@@ -1,36 +1,39 @@
-<div class="store">
-  <ul ng-repeat="store in ctrl.store">
-  <li>  {{store.name}}</li>
-  <li><img class = "storeimg" src ="{{store.image}}"></li>
-    <li>{{store.price}}</li>
-  <li>{{store.description}}</li>
-
-
-</ul>
+<div class="productContainer">
+<div ng-repeat="store in ctrl.store">
+  <div class="allProductdContainer">
+    <div>
+      <ul class="productDiv">
+        <h4 class="productName">{{store.name}}</h4>
+        <img class = "cardImage" src ="{{store.image}}">
+          <li class="product">{{store.description}}</li>
+          <li class="price">{{store.price}}</li>
+      </ul>
+      </div>
+    </div>
   </div>
 </div>
 <!-- show modal -->
-<div
+<!-- <div
   ng-if="ctrl.showModal === true"
    class="showDetailsModal">
 
   <div class="showDetailsContainer">
 
-    <h2>{{ctrl.place.name}}</h2>
+    <h2>{{ctrl.store.name}}</h2>
 
     <div class="detailsImage">
-      <img src="{{ctrl.place.image}}" alt="An image of {{ctrl.place.name}}" />
+      <img src="{{ctrl.store.image}}" alt="An image of {{ctrl.store.name}}" />
     </div>
 
           <div class="showDetailsContents">
             <h3>Boo Rating: </h3>
-            <span class="boos">{{ctrl.place.boos}}</span>
+            <span class="boos">{{ctrl.store.boos}}</span>
 
             <h3>Location: </h3>
-            <span class="location">{{ctrl.place.location}}</span>
+            <span class="location">{{ctrl.store.location}}</span>
 
             <h3>Description: </h3>
-            <span class="description">{{ctrl.place.description}}</span>
+            <span class="description">{{ctrl.store.description}}</span>
 
           </div>
 
@@ -41,4 +44,4 @@
             href="#">x Close</a>
 
         </div>
-      </div>
+      </div> -->
