@@ -393,10 +393,12 @@ textarea {
   height: 200px;
   margin: auto;
 }
+
 li {
   list-style: none;
   margin: 15px;
 }
+
 .detailButton{
   background-color: rgb(152, 70, 203);
   border: 3px solid black;
@@ -570,6 +572,52 @@ margin: 20px;
 .githublink {
   width: 230px;
 }
+
+.productContainer {
+  margin: 0 auto;
+}
+.productDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+.allProductContainer {
+  width: 95vw;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+/* . {
+  /* border: 1px solid white; */
+  /* padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* . {
+  border: 3px solid orange;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+} */
+
+.productName {
+  font-family: 'Almendra SC', serif;
+  font-size: 20px;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+}
+
 /* ICE code */
 
 /* .createUserButton:hover {
